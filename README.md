@@ -1,27 +1,27 @@
 # DevOps Skills
 
-[![validate-skills](https://github.com/arjunprabhulal/devops-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/arjunprabhulal/devops-skills/actions/workflows/ci.yml)
+[![validate-skills](https://img.shields.io/github/actions/workflow/status/arjunprabhulal/devops-skills/ci.yml?branch=main&label=validate-skills)](https://github.com/arjunprabhulal/devops-skills/actions/workflows/ci.yml)
 [![Skills](https://img.shields.io/badge/skills-88-informational)](#skills)
 [![Categories](https://img.shields.io/badge/categories-15-informational)](#skills)
 [![Evals](https://img.shields.io/badge/evals-264-informational)](docs/evals.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 <!-- categories:start -->
-[![CI/CD](https://img.shields.io/badge/CI%2FCD-8-555)](#skills)
-[![Containers](https://img.shields.io/badge/Containers-4-555)](#skills)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-9-555)](#skills)
-[![Infrastructure as Code](https://img.shields.io/badge/Infrastructure%20as%20Code-6-555)](#skills)
-[![Cloud](https://img.shields.io/badge/Cloud-6-555)](#skills)
-[![GitOps](https://img.shields.io/badge/GitOps-3-555)](#skills)
-[![Observability](https://img.shields.io/badge/Observability-7-555)](#skills)
-[![Reliability & SRE](https://img.shields.io/badge/Reliability%20%26%20SRE-8-555)](#skills)
-[![Security & DevSecOps](https://img.shields.io/badge/Security%20%26%20DevSecOps-8-555)](#skills)
-[![Networking](https://img.shields.io/badge/Networking-6-555)](#skills)
-[![Data & Storage](https://img.shields.io/badge/Data%20%26%20Storage-5-555)](#skills)
-[![Platform Engineering](https://img.shields.io/badge/Platform%20Engineering-5-555)](#skills)
-[![Automation](https://img.shields.io/badge/Automation-5-555)](#skills)
-[![FinOps](https://img.shields.io/badge/FinOps-4-555)](#skills)
-[![Performance](https://img.shields.io/badge/Performance-4-555)](#skills)
+[![CI/CD](https://img.shields.io/badge/CI%2FCD-8-0969DA)](#skills)
+[![Containers](https://img.shields.io/badge/Containers-4-0969DA)](#skills)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-9-0969DA)](#skills)
+[![Infrastructure as Code](https://img.shields.io/badge/Infrastructure%20as%20Code-6-1A7F37)](#skills)
+[![Cloud](https://img.shields.io/badge/Cloud-6-1A7F37)](#skills)
+[![GitOps](https://img.shields.io/badge/GitOps-3-1A7F37)](#skills)
+[![Observability](https://img.shields.io/badge/Observability-7-BC4C00)](#skills)
+[![Reliability & SRE](https://img.shields.io/badge/Reliability%20%26%20SRE-8-BC4C00)](#skills)
+[![Security & DevSecOps](https://img.shields.io/badge/Security%20%26%20DevSecOps-8-CF222E)](#skills)
+[![Networking](https://img.shields.io/badge/Networking-6-CF222E)](#skills)
+[![Data & Storage](https://img.shields.io/badge/Data%20%26%20Storage-5-0F766E)](#skills)
+[![Platform Engineering](https://img.shields.io/badge/Platform%20Engineering-5-0F766E)](#skills)
+[![Automation](https://img.shields.io/badge/Automation-5-8250DF)](#skills)
+[![FinOps](https://img.shields.io/badge/FinOps-4-8250DF)](#skills)
+[![Performance](https://img.shields.io/badge/Performance-4-8250DF)](#skills)
 <!-- categories:end -->
 
 DevOps skills guides an AI agent loads on demand — 88 skills spanning the lifecycle: CI/CD,
@@ -33,10 +33,6 @@ Each skill is a single `SKILL.md` file covering one job, loaded when the task ma
 instead; the body walks through the work in numbered steps, each ending in a concrete
 `Done when:` checkpoint; the closing `Report` section states what was decided and what the skill
 does not cover.
-
-Skills name tools as examples rather than requirements, so they apply across providers. The cost of
-that choice is that a skill will reason through a decision with you, but will not hand you a
-finished vendor-specific config.
 
 ## Install
 
