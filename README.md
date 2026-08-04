@@ -11,21 +11,21 @@
 
 <!-- categories:start -->
 <p align="center">
-  <img src="https://img.shields.io/badge/CI%2FCD-8-0969DA?style=flat-square" alt="CI/CD">
-  <img src="https://img.shields.io/badge/Containers-4-0969DA?style=flat-square" alt="Containers">
-  <img src="https://img.shields.io/badge/Kubernetes-9-0969DA?style=flat-square" alt="Kubernetes">
-  <img src="https://img.shields.io/badge/Infrastructure%20as%20Code-6-1A7F37?style=flat-square" alt="Infrastructure as Code">
-  <img src="https://img.shields.io/badge/Cloud-6-1A7F37?style=flat-square" alt="Cloud">
-  <img src="https://img.shields.io/badge/GitOps-3-1A7F37?style=flat-square" alt="GitOps">
-  <img src="https://img.shields.io/badge/Observability-7-BC4C00?style=flat-square" alt="Observability">
-  <img src="https://img.shields.io/badge/Reliability%20%26%20SRE-8-BC4C00?style=flat-square" alt="Reliability & SRE">
-  <img src="https://img.shields.io/badge/Security%20%26%20DevSecOps-8-CF222E?style=flat-square" alt="Security & DevSecOps">
-  <img src="https://img.shields.io/badge/Networking-6-CF222E?style=flat-square" alt="Networking">
-  <img src="https://img.shields.io/badge/Data%20%26%20Storage-5-0F766E?style=flat-square" alt="Data & Storage">
-  <img src="https://img.shields.io/badge/Platform%20Engineering-5-0F766E?style=flat-square" alt="Platform Engineering">
-  <img src="https://img.shields.io/badge/Automation-5-8250DF?style=flat-square" alt="Automation">
-  <img src="https://img.shields.io/badge/FinOps-4-8250DF?style=flat-square" alt="FinOps">
-  <img src="https://img.shields.io/badge/Performance-4-8250DF?style=flat-square" alt="Performance">
+  <img src="https://img.shields.io/badge/CI%2FCD-8-B81D1D?style=flat-square" alt="CI/CD">
+  <img src="https://img.shields.io/badge/Containers-4-B85B1D?style=flat-square" alt="Containers">
+  <img src="https://img.shields.io/badge/Kubernetes-9-B8991D?style=flat-square" alt="Kubernetes">
+  <img src="https://img.shields.io/badge/Infrastructure%20as%20Code-6-99B81D?style=flat-square" alt="Infrastructure as Code">
+  <img src="https://img.shields.io/badge/Cloud-6-5BB81D?style=flat-square" alt="Cloud">
+  <img src="https://img.shields.io/badge/GitOps-3-1DB81D?style=flat-square" alt="GitOps">
+  <img src="https://img.shields.io/badge/Observability-7-1DB85B?style=flat-square" alt="Observability">
+  <img src="https://img.shields.io/badge/Reliability%20%26%20SRE-8-1DB899?style=flat-square" alt="Reliability & SRE">
+  <img src="https://img.shields.io/badge/Security%20%26%20DevSecOps-8-1D99B8?style=flat-square" alt="Security & DevSecOps">
+  <img src="https://img.shields.io/badge/Networking-6-1D5BB8?style=flat-square" alt="Networking">
+  <img src="https://img.shields.io/badge/Data%20%26%20Storage-5-1D1DB8?style=flat-square" alt="Data & Storage">
+  <img src="https://img.shields.io/badge/Platform%20Engineering-5-5B1DB8?style=flat-square" alt="Platform Engineering">
+  <img src="https://img.shields.io/badge/Automation-5-991DB8?style=flat-square" alt="Automation">
+  <img src="https://img.shields.io/badge/FinOps-4-B81D99?style=flat-square" alt="FinOps">
+  <img src="https://img.shields.io/badge/Performance-4-B81D5B?style=flat-square" alt="Performance">
 </p>
 <!-- categories:end -->
 
