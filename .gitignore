@@ -14,3 +14,8 @@ __pycache__/
 
 # Local agent settings — machine-specific, never shared
 .claude/settings.local.json
+
+# Installed skills. This repo is the source of skills, so anything a harness or
+# the skills CLI installs back into it is a copy, never something to commit.
+.claude/skills/
+skills-lock.json
