@@ -10,30 +10,28 @@ permissions:
 
 jobs:
   validate:
-    name: Validate skills, evals, and manifests
+    name: Build the Antigravity layout, then validate everything
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate all SKILL.md files, evals, README catalogue, and plugin manifest
+
+      # .agents/ is generated, not committed, so build it here. This proves the
+      # build script still works and gives check-skills.py a mirror to compare
+      # against the canonical tree.
+      - name: Build .agents/skills/ from skills/
+        run: python3 scripts/build-antigravity.py
+
+      - name: Validate skills, references, evals, README catalogue, and manifests
         run: python3 scripts/check-skills.py
 
-  generated-tree-is-current:
-    name: Antigravity tree matches its source
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      # .agents/skills/ is generated from skills/ and committed. Regenerating it must be a no-op;
-      # a diff here means someone edited the generated tree by hand or forgot to rebuild.
-      - name: Regenerate .agents/skills/ and check for drift
+      # Nothing generated should ever land in a commit.
+      - name: Fail if the build wrote anything tracked by git
         run: |
-          python3 scripts/build-antigravity.py
-          if ! git diff --exit-code --stat; then
-            echo "::error::.agents/skills/ is out of date. Run: python3 scripts/build-antigravity.py"
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::Generated output is tracked by git. It must be ignored:"
+            git status --porcelain
             exit 1
           fi

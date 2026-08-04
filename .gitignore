@@ -19,3 +19,8 @@ __pycache__/
 # the skills CLI installs back into it is a copy, never something to commit.
 .claude/skills/
 skills-lock.json
+
+# Generated Antigravity layout. Build it with scripts/build-antigravity.py.
+# Not committed: registries that scan .agents/skills/ would count every skill
+# a second time.
+.agents/

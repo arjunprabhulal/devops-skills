@@ -36,8 +36,10 @@ Changes land here before they are cut into a release.
   `argocd-operations`, `metrics-and-monitoring`, `incident-response`, `secrets-management`,
   `network-troubleshooting`, `data-migration`, `internal-developer-platform`, `scheduled-jobs`,
   `cost-optimization`, and `performance-tuning`.
-- Generated flat skill layout at `.agents/skills/<skill-name>/` for Google Antigravity, mirroring
-  each `SKILL.md` and its `references/` folder.
+- `scripts/build-antigravity.py`, which generates the flat `.agents/skills/<skill-name>/` layout
+  Google Antigravity discovers, mirroring each `SKILL.md` and its `references/` folder. The
+  generated tree is gitignored rather than committed, because skill registries scan
+  `.agents/skills/` and would otherwise index every skill twice.
 - `scripts/check-skills.py`, which validates frontmatter against the Agent Skills specification
   (`name` length and character set, reserved words, `description` length and absence of XML tags),
   name/folder match, description triggers, body length under 500 lines, `Done when:` checkpoints,
@@ -45,12 +47,10 @@ Changes land here before they are cut into a release.
   required on reference files over 100 lines, the `README.md` catalogue against each skill's
   current description, `.claude-plugin/plugin.json` agreement with the skills on disk, and
   `.agents/skills/` sync.
-- `scripts/build-antigravity.py`, which regenerates `.agents/skills/` from the canonical tree.
 - Claude Code plugin manifests: `.claude-plugin/plugin.json` listing all 88 skill paths, and
   `.claude-plugin/marketplace.json`.
 - GitHub Actions workflow `.github/workflows/ci.yml`, which runs `scripts/check-skills.py` and
-  checks that the generated `.agents/skills/` tree is current, on pushes to `main` and on pull
-  requests.
+  builds the Antigravity layout first, on pushes to `main` and on pull requests.
 - Issue and pull request templates under `.github/`.
 - Documentation: `README.md` with the skill catalogue, `docs/installation.md`,
   `docs/authoring-skills.md`, `docs/evals.md`, `docs/architecture.md`, `docs/faq.md`,

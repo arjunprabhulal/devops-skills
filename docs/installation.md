@@ -87,11 +87,16 @@ folder is left behind.
 ## Google Antigravity
 
 Antigravity uses the same `SKILL.md` format and discovers skills from a flat
-`.agents/skills/<skill-name>/` layout. That layout is prebuilt and committed here, so no conversion
-step is needed. See <https://antigravity.google/docs/skills>.
+`.agents/skills/<skill-name>/` layout. That layout is generated from the canonical tree rather than
+committed, so build it first. See <https://antigravity.google/docs/skills>.
 
-Workspace skills — open this repository in Antigravity, or copy its `.agents/` folder into
-the root of another project. Every skill under `.agents/skills/` is discovered automatically.
+```bash
+python3 scripts/build-antigravity.py
+```
+
+Workspace skills — open this repository in Antigravity once the tree is built, or copy the
+generated `.agents/` folder into the root of another project. Every skill under `.agents/skills/`
+is discovered automatically.
 
 Global skills — copy a skill folder into `~/.gemini/config/skills/` to make it available across
 all workspaces. The Antigravity tree is flat, so no category segment appears in the source path:

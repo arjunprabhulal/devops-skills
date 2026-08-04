@@ -44,7 +44,8 @@ layout is in sync. When you add a skill, add its path to `plugin.json` and to th
 
 The canonical skills live under `skills/<category>/<skill>/` (the Claude Code plugin layout).
 Google Antigravity discovers skills from a flat `.agents/skills/<skill>/` layout, which is
-**generated** from the canonical tree. After adding or editing any skill, regenerate it:
+**generated** from the canonical tree and **not committed** — `.agents/` is gitignored. After
+adding or editing any skill, regenerate it locally:
 
 ```bash
 python3 scripts/build-antigravity.py

@@ -27,14 +27,16 @@ cover. Tools are named to illustrate a principle, never as a requirement.
 cp -r skills/kubernetes/kubernetes-operations ~/.claude/skills/
 ```
 
-**Google Antigravity** — reads the prebuilt flat tree at `.agents/skills/`, so there is no build
-step. Take the whole set into a workspace, or one skill globally:
+**Google Antigravity** — reads a flat `.agents/skills/` layout, which is generated from the
+canonical tree rather than committed. Build it once, then take the whole set into a workspace or
+one skill globally:
 
 ```bash
 git clone https://github.com/arjunprabhulal/devops-skills.git
-cp -r devops-skills/.agents /path/to/your-project/
+cd devops-skills && python3 scripts/build-antigravity.py
 
-cp -r devops-skills/.agents/skills/kubernetes-operations ~/.gemini/config/skills/
+cp -r .agents /path/to/your-project/
+cp -r .agents/skills/kubernetes-operations ~/.gemini/config/skills/
 ```
 
 **Any harness** — through the skills CLI:

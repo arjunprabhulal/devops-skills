@@ -38,9 +38,16 @@ Claude Code plugin manifest points at these paths directly: every entry in the `
 folders are dropped; each skill sits directly under `.agents/skills/`. Skill names are unique
 across the whole repo, so flattening loses nothing.
 
-The generated tree is committed to git. Cloning the repo into an Antigravity workspace is enough —
-there is no build step for a consumer. That convenience has one cost: the mirror can drift, so the
-validator compares it against the canonical tree on every run.
+The generated tree is not committed. `.agents/` is gitignored and built on demand with
+`scripts/build-antigravity.py`, so the repository holds exactly one copy of every skill.
+
+That is a deliberate trade. Committing the mirror removed the build step for Antigravity users,
+but `.agents/skills/` is one of the directories the skills.sh CLI and registry scan for skills, so
+a committed mirror is indexed as a second set: the directory reported 176 skills for this
+repository instead of 88. No exclusion mechanism exists to suppress that — `.skillsignore` and an
+`internal:` frontmatter flag are both open proposals upstream, neither shipped. Generating the tree
+locally is the only way to keep the published count honest. When the tree does exist, the validator
+still compares it against the canonical one.
 
 Never hand-edit anything under `.agents/skills/`. The build script deletes the directory and
 recreates it, so edits made there are lost on the next build. Edit the canonical copy and rebuild.
@@ -116,16 +123,15 @@ It carries a category and keywords for discovery, and does not list individual s
 ## CI
 
 `.github/workflows/ci.yml` defines the `validate-skills` workflow. It triggers on pushes to `main`
-and on every pull request, with read-only `contents` permission. It has two jobs, each checking
-out the repo on `ubuntu-latest` and setting up Python 3.12:
+and on every pull request, with read-only `contents` permission, and runs a single `validate` job
+on `ubuntu-latest` with Python 3.12:
 
-- `validate` runs `python3 scripts/check-skills.py`. The validator's non-zero exit fails the job.
-- `generated-tree-is-current` runs `python3 scripts/build-antigravity.py`, then fails on any
-  `git diff`. A diff means the generated tree was hand-edited or a canonical change landed without
-  a rebuild.
-
-CI runs no other step. The validator also compares the two trees, so a stale mirror fails both
-jobs.
+1. `python3 scripts/build-antigravity.py` builds `.agents/skills/`. It is not committed, so CI has
+   to produce it — which also proves the build script still works.
+2. `python3 scripts/check-skills.py` validates everything. A non-zero exit fails the job. Because
+   step 1 just produced the mirror, the validator's tree comparison runs against a fresh build.
+3. `git status --porcelain` must be empty. Anything the build wrote that git can see means
+   generated output has become tracked, which is the state this layout exists to prevent.
 
 ## How a change flows through the repo
 
