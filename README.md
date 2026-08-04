@@ -1,33 +1,12 @@
 # DevOps Skills
 
 <p align="center">
-  <img src="https://img.shields.io/github/actions/workflow/status/arjunprabhulal/devops-skills/ci.yml?branch=main&amp;label=validate%20skills&amp;style=for-the-badge&amp;labelColor=1B4332&amp;color=2EA043" alt="validate-skills">
-  <img src="https://img.shields.io/badge/skills-88-2EA043?style=for-the-badge&amp;labelColor=14532D" alt="88 skills">
-  <img src="https://img.shields.io/badge/categories-15-0969DA?style=for-the-badge&amp;labelColor=0A3069" alt="15 categories">
-  <img src="https://img.shields.io/badge/evals-264-BC4C00?style=for-the-badge&amp;labelColor=5C2E00" alt="264 evals">
-  <img src="https://img.shields.io/badge/harness-agnostic-8A2BE2?style=for-the-badge&amp;labelColor=3F1D6B" alt="Harness agnostic">
-  <img src="https://img.shields.io/badge/License-MIT-CF222E?style=for-the-badge&amp;labelColor=6B0E17" alt="MIT License">
+  <a href="https://github.com/arjunprabhulal/devops-skills/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/arjunprabhulal/devops-skills/ci.yml?branch=main&amp;label=validate%20skills&amp;style=for-the-badge&amp;labelColor=14532D&amp;color=2EA043" alt="validate-skills"></a>
+  <a href="#skills"><img src="https://img.shields.io/badge/skills-88-2EA043?style=for-the-badge&amp;labelColor=14532D" alt="88 skills"></a>
+  <a href="#skills"><img src="https://img.shields.io/badge/categories-15-0969DA?style=for-the-badge&amp;labelColor=0A3069" alt="15 categories"></a>
+  <a href="docs/installation.md"><img src="https://img.shields.io/badge/harness-agnostic-8A2BE2?style=for-the-badge&amp;labelColor=3F1D6B" alt="Harness agnostic"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-CF222E?style=for-the-badge&amp;labelColor=6B0E17" alt="MIT License"></a>
 </p>
-
-<!-- categories:start -->
-<p align="center">
-  <img src="https://img.shields.io/badge/CI%2FCD-8-C52020?style=flat-square&amp;labelColor=831515" alt="CI/CD">
-  <img src="https://img.shields.io/badge/Containers-4-C56220?style=flat-square&amp;labelColor=834115" alt="Containers">
-  <img src="https://img.shields.io/badge/Kubernetes-9-C5A420?style=flat-square&amp;labelColor=836D15" alt="Kubernetes">
-  <img src="https://img.shields.io/badge/Infrastructure%20as%20Code-6-A4C520?style=flat-square&amp;labelColor=6D8315" alt="Infrastructure as Code">
-  <img src="https://img.shields.io/badge/Cloud-6-62C520?style=flat-square&amp;labelColor=418315" alt="Cloud">
-  <img src="https://img.shields.io/badge/GitOps-3-20C520?style=flat-square&amp;labelColor=158315" alt="GitOps">
-  <img src="https://img.shields.io/badge/Observability-7-20C562?style=flat-square&amp;labelColor=158341" alt="Observability">
-  <img src="https://img.shields.io/badge/Reliability%20%26%20SRE-8-20C5A4?style=flat-square&amp;labelColor=15836D" alt="Reliability & SRE">
-  <img src="https://img.shields.io/badge/Security%20%26%20DevSecOps-8-20A4C5?style=flat-square&amp;labelColor=156D83" alt="Security & DevSecOps">
-  <img src="https://img.shields.io/badge/Networking-6-2062C5?style=flat-square&amp;labelColor=154183" alt="Networking">
-  <img src="https://img.shields.io/badge/Data%20%26%20Storage-5-2020C5?style=flat-square&amp;labelColor=151583" alt="Data & Storage">
-  <img src="https://img.shields.io/badge/Platform%20Engineering-5-6220C5?style=flat-square&amp;labelColor=411583" alt="Platform Engineering">
-  <img src="https://img.shields.io/badge/Automation-5-A420C5?style=flat-square&amp;labelColor=6D1583" alt="Automation">
-  <img src="https://img.shields.io/badge/FinOps-4-C520A4?style=flat-square&amp;labelColor=83156D" alt="FinOps">
-  <img src="https://img.shields.io/badge/Performance-4-C52062?style=flat-square&amp;labelColor=831541" alt="Performance">
-</p>
-<!-- categories:end -->
 
 DevOps skills guides an AI agent loads on demand — 88 skills spanning the lifecycle: CI/CD,
 containers, Kubernetes, infrastructure as code, cloud, GitOps, observability, reliability,

@@ -127,40 +127,6 @@ if f"badge/skills-{n_skills}-" not in readme:
     errors.append(f"README.md: skill-count badge does not say {n_skills}")
 if f"badge/categories-{n_cats}-" not in readme:
     errors.append(f"README.md: category-count badge does not say {n_cats}")
-n_evals = sum(len(json.load(open(os.path.join(ROOT, "evals", os.path.basename(os.path.dirname(f))
-                                              + ".json"), encoding="utf-8")).get("evals", []))
-              for f in skill_files)
-if f"badge/evals-{n_evals}-" not in readme:
-    errors.append(f"README.md: eval-count badge does not say {n_evals}")
-
-# Per-category badges are generated from disk; every one must still match its directory.
-CATEGORY_DIRS = {
-    "CI/CD": "ci-cd", "Containers": "containers", "Kubernetes": "kubernetes",
-    "Infrastructure as Code": "iac", "Cloud": "cloud", "GitOps": "gitops",
-    "Observability": "observability", "Reliability & SRE": "reliability",
-    "Security & DevSecOps": "security", "Networking": "networking",
-    "Data & Storage": "data", "Platform Engineering": "platform-engineering",
-    "Automation": "automation", "FinOps": "finops", "Performance": "performance",
-}
-badge_block = re.search(r"<!-- categories:start -->(.*?)<!-- categories:end -->", readme, re.S)
-if not badge_block:
-    errors.append("README.md: category badge block missing (<!-- categories:start --> markers)")
-else:
-    # Accept either the markdown form [![Label](.../badge/Label-N-color)] or the HTML
-    # form <img src=".../badge/Label-N-color" alt="Label">, whichever the header uses.
-    blk = badge_block.group(1)
-    badged = {a: c for c, a in re.findall(
-        r'<img src="https://img\.shields\.io/badge/[^"]*?-(\d+)-[^"]*" alt="([^"]+)"', blk)}
-    badged.update(dict(re.findall(
-        r"\[!\[([^\]]+)\]\(https://img\.shields\.io/badge/[^-]+-(\d+)-", blk)))
-    for label, d in CATEGORY_DIRS.items():
-        real = len(glob.glob(os.path.join(ROOT, "skills", d, "*", "SKILL.md")))
-        if label not in badged:
-            errors.append(f"README.md: no category badge for '{label}'")
-        elif int(badged[label]) != real:
-            errors.append(f"README.md: '{label}' badge says {badged[label]}, disk has {real}")
-    for extra in sorted(set(badged) - set(CATEGORY_DIRS)):
-        errors.append(f"README.md: category badge for unknown category '{extra}'")
 if not re.search(rf"\b{n_skills} skills spanning the lifecycle", readme):
     errors.append(f"README.md: opening paragraph does not say {n_skills} skills")
 for cat_row in re.findall(r"^\| ([A-Za-z/ &]+?) \| (\d+) \| ", readme, re.M):
