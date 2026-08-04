@@ -152,7 +152,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 | FinOps | 4 | Spending cloud money deliberately, not accidentally |
 | Performance | 4 | Making systems fast by measuring, not guessing |
 
-<details>
+<details open>
 <summary><strong>CI/CD</strong> (8) — Getting a change from commit to production, fast and safe</summary>
 
 | Skill | What it does |
@@ -168,7 +168,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Containers</strong> (4) — Packaging applications into images that are small, reproducible, and safe</summary>
 
 | Skill | What it does |
@@ -180,7 +180,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Kubernetes</strong> (9) — Running workloads on Kubernetes without fighting the control loop</summary>
 
 | Skill | What it does |
@@ -197,7 +197,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Infrastructure as Code</strong> (6) — Changing infrastructure through version-controlled, reviewable configuration</summary>
 
 | Skill | What it does |
@@ -211,7 +211,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Cloud</strong> (6) — Designing and operating on cloud platforms deliberately</summary>
 
 | Skill | What it does |
@@ -225,7 +225,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>GitOps</strong> (3) — Making Git the source of truth and letting a controller reconcile reality to it</summary>
 
 | Skill | What it does |
@@ -236,7 +236,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Observability</strong> (7) — Making running systems explain themselves</summary>
 
 | Skill | What it does |
@@ -251,7 +251,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Reliability & SRE</strong> (8) — Keeping systems up, and recovering fast when they are not</summary>
 
 | Skill | What it does |
@@ -267,7 +267,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Security & DevSecOps</strong> (8) — Building security into the pipeline and the platform, not bolting it on</summary>
 
 | Skill | What it does |
@@ -283,7 +283,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Networking</strong> (6) — Getting traffic to the right place, reliably and securely</summary>
 
 | Skill | What it does |
@@ -297,7 +297,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Data & Storage</strong> (5) — Running stateful systems and moving data without losing it</summary>
 
 | Skill | What it does |
@@ -310,7 +310,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Platform Engineering</strong> (5) — Building the paved roads that make the right way the easy way</summary>
 
 | Skill | What it does |
@@ -323,7 +323,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Automation</strong> (5) — Removing the repetitive, error-prone work humans should not be doing</summary>
 
 | Skill | What it does |
@@ -336,7 +336,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>FinOps</strong> (4) — Spending cloud money deliberately, not accidentally</summary>
 
 | Skill | What it does |
@@ -348,7 +348,7 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Performance</strong> (4) — Making systems fast by measuring, not guessing</summary>
 
 | Skill | What it does |
