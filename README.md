@@ -18,20 +18,33 @@ cover. Tools are named to illustrate a principle, never as a requirement.
 
 ## Install
 
+**Claude Code** — as a plugin, or one skill at a time:
+
 ```bash
-# Claude Code, as a plugin
 /plugin marketplace add arjunprabhulal/devops-skills
 /plugin install devops-skills@arjunprabhulal
 
-# Any harness, via the skills CLI
-npx skills add arjunprabhulal/devops-skills
-
-# A single skill, by hand
 cp -r skills/kubernetes/kubernetes-operations ~/.claude/skills/
 ```
 
-Google Antigravity reads the prebuilt flat tree at `.agents/skills/`. See
-[docs/installation.md](docs/installation.md) for every route, verification, and uninstalling.
+**Google Antigravity** — reads the prebuilt flat tree at `.agents/skills/`, so there is no build
+step. Take the whole set into a workspace, or one skill globally:
+
+```bash
+git clone https://github.com/arjunprabhulal/devops-skills.git
+cp -r devops-skills/.agents /path/to/your-project/
+
+cp -r devops-skills/.agents/skills/kubernetes-operations ~/.gemini/config/skills/
+```
+
+**Any harness** — through the skills CLI:
+
+```bash
+npx skills add arjunprabhulal/devops-skills
+```
+
+See [docs/installation.md](docs/installation.md) for rules and workflows, verification, updating,
+and uninstalling.
 
 ## What a skill looks like
 
