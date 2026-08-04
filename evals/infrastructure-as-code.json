@@ -1,0 +1,23 @@
+{
+  "skill_name": "infrastructure-as-code",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up remote state for our terraform project",
+      "expected_output": "Configures remote, locked, encrypted-at-rest state storage with one state file per environment (not one shared file across dev/staging/prod), consistent with protecting state like a production database.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "prod has drifted from what's in the repo again",
+      "expected_output": "Recommends running a scheduled read-only plan against each environment's state to catch drift on a cadence rather than only after incidents, and investigating who or what caused the drift before importing or re-applying to reconcile it.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just auto-apply plans in CI so nobody has to review them",
+      "expected_output": "Pushes back: every plan must be read by a person or gated by policy before apply, especially watching for destroy/replace operations, and irreversible changes (stateful resource destroys) need an explicit manual approval gate regardless of automation.",
+      "files": []
+    }
+  ]
+}

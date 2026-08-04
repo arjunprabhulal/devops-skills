@@ -1,0 +1,23 @@
+{
+  "skill_name": "kubernetes-security",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "write an RBAC role for our deploy-bot service account",
+      "expected_output": "Writes a namespace-scoped Role+RoleBinding listing exact verbs and resources rather than ClusterRole edit/cluster-admin, disables automountServiceAccountToken unless the workload calls the API, and suggests auditing with kubectl auth can-i --list --as=<sa>.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "pods are running as root even though we set restricted policy last quarter",
+      "expected_output": "Diagnoses that securityContext written once drifts without enforcement, and recommends enforcing Pod Security Standards at admission (restricted profile via PSA labels or Kyverno/OPA) rather than relying on convention, using a warn/audit rollout before flipping to enforce.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "we base64 encode secrets in the Secret object so that's encrypted, right?",
+      "expected_output": "Corrects the misconception: base64 is encoding, not encryption, and anyone with get access or etcd access reads it in plaintext; recommends enabling EncryptionConfiguration/KMS at rest for the Secrets resource and tightening RBAC on secrets as strictly as any other resource.",
+      "files": []
+    }
+  ]
+}

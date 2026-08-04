@@ -1,0 +1,23 @@
+{
+  "skill_name": "backup-and-restore",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up a backup policy for our orders database",
+      "expected_output": "Starts from a written RPO for the dataset agreed with the business owner, derives backup frequency and continuous/incremental methods from that RPO, sets retention per tier with an explicit reason, ensures at least one offsite immutable copy, and requires encryption at rest with separately-managed keys.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we've never actually tried restoring from our backups",
+      "expected_output": "Flags this as effectively having no backup, and schedules a full restore into an isolated environment on a fixed cadence (e.g. monthly), run by someone other than whoever built the backup job, measuring actual restore time against the stated RTO.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "we keep backups in the same aws account as prod, that's fine right?",
+      "expected_output": "Pushes back, explaining that same-account backups share the same compromise/deletion blast radius as production, and requires replicating to a separate account or region with object-lock/write-once storage and restricted retention-modification permissions.",
+      "files": []
+    }
+  ]
+}

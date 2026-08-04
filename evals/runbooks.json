@@ -1,0 +1,23 @@
+{
+  "skill_name": "runbooks",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "write a runbook for our disk-usage-above-90% alert",
+      "expected_output": "Writes concrete copy-pasteable steps (not vague goals) with numbered steps, explicit thresholds and decision branches, states expected output per step, labels destructive/blast-radius steps clearly, and names it after the symptom rather than the fix.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "on-call keeps reverse-engineering the fix every time this alert fires",
+      "expected_output": "Diagnoses missing or undiscoverable runbook linkage; fixes it by linking the runbook directly from the alert payload (one runbook per alert, not per service) so the responder lands on the exact procedure within one click.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "i'll just keep one big runbook doc for the whole service and skip testing it since it's obvious",
+      "expected_output": "Pushes back: recommends one runbook per alert rather than one long doc to search through, and insists runbooks be execution-tested during a game day rather than only reviewed on paper, since an untested runbook creates false confidence.",
+      "files": []
+    }
+  ]
+}

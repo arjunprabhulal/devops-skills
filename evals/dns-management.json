@@ -1,0 +1,23 @@
+{
+  "skill_name": "dns-management",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up DNS failover for our api to a backup region",
+      "expected_output": "Builds failover on a health check that exercises the real request path rather than just pinging the IP, notes the failover floor is bounded by TTL, lowers TTL before the cutover, and recommends deliberately testing the failover like a DR runbook.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "updated the A record 5 minutes ago and it's still resolving old, is it broken",
+      "expected_output": "Explains propagation is caching not replication, distinguishes a resolver that hasn't expired its TTL yet from an actually wrong record, and recommends querying the authoritative server directly instead of re-editing the record.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "just CNAME the root domain example.com to our load balancer",
+      "expected_output": "Pushes back: a zone apex generally cannot be a CNAME per spec, and recommends an apex-capable ALIAS/ANAME feature or an A record with a stable IP instead.",
+      "files": []
+    }
+  ]
+}

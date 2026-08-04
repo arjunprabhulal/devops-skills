@@ -1,0 +1,23 @@
+{
+  "skill_name": "on-call-management",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up an on-call rotation for our team",
+      "expected_output": "Designs the rotation for fairness (rotating bad weeks, not exempting the same people), sizes it to actual page volume with explicit compensation, writes a rehearsed escalation path (primary/secondary/manager), and defines a deliberate handoff process with logged notes.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our on-call gets paged 10 times a night and people are burning out",
+      "expected_output": "Flags this as an unsustainable alert-load signal to track (pages per shift), recommends routing non-actionable pages to tickets instead, fixing what's paging rather than toughening the rotation, and running a specific on-call check-in since burnout has likely been accumulating unreported.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "our best engineer never escalates, he just grinds through everything alone, that's dedication right?",
+      "expected_output": "Pushes back: escalating early is good judgment, not weakness, and should be reinforced explicitly; a responder who never escalates is a sign the escalation path isn't normalized, and sustained solo grinding is a burnout risk that needs a real check-in, not praise.",
+      "files": []
+    }
+  ]
+}

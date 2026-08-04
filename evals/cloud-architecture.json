@@ -1,0 +1,23 @@
+{
+  "skill_name": "cloud-architecture",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "design the region/AZ layout for our new order service",
+      "expected_output": "Draws failure domains (zone vs region vs managed-service boundary) before naming compute, states which components are managed vs self-run with a written reason for each self-run exception, and defaults compute to stateless.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our cloud bill jumped and nobody can explain why",
+      "expected_output": "Points to cross-AZ/cross-region data transfer as the likely surprise line item and has the dominant cost drivers estimated from expected traffic rather than guessed from the diagram, per the pricing step.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's build an abstraction layer so we're not locked into one vendor's queue, just in case",
+      "expected_output": "Pushes back that 'just in case' is not a justification, per step 5 the lock-in should be named and accepted with a one-line reason if it's a good trade, and unnecessary portability layers are their own cost (pointing to multi-cloud for that discipline).",
+      "files": []
+    }
+  ]
+}

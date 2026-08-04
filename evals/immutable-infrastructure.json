@@ -1,0 +1,23 @@
+{
+  "skill_name": "immutable-infrastructure",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up a golden image pipeline for our app servers",
+      "expected_output": "Builds the image reproducibly from a versioned Packer template or Dockerfile in a pipeline (not a hand-built snapshot), tags each build with the source commit, scans it before promotion, and deploys by replacing instances via the orchestrator with health checks before old instances terminate.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "instances in the fleet keep behaving differently from each other for no clear reason",
+      "expected_output": "Diagnoses config drift from ad hoc SSH changes on running instances and treats any manually-discovered change as an incident, since the fix is removing standing SSH access for routine changes and baking every provisioning step into the image build instead.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "i'll just ssh in and patch this one instance real quick instead of rebuilding the image",
+      "expected_output": "Pushes back: changes must be baked into the image and rolled out as a new instance, never applied to a running one, because the two-second SSH fix is exactly how drift gets reintroduced and breaks the ability to trace a running instance back to its source.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "performance-tuning",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "checkout API is slow, help us tune it",
+      "expected_output": "Establishes a baseline first (latency percentile and load level it was measured under), then uses the USE method across CPU, memory, disk/network to find which resource is actually saturated before changing anything, and changes one thing at a time with a remeasurement against the baseline.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we bumped the thread pool and memory and it feels faster now",
+      "expected_output": "Flags that changing multiple settings at once means nobody knows which change mattered, and that 'feels faster' is not a measurement; asks for the pre-change baseline and a controlled remeasurement of the same metric, reverting whichever change didn't move it.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just add a cache in front of the slow endpoint",
+      "expected_output": "Pushes back that caching as a first move hides the slow path instead of fixing it and adds invalidation risk; recommends finding the real bottleneck via the USE method and profiling the hot path first, using caching only once the actual cost is understood.",
+      "files": []
+    }
+  ]
+}

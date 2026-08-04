@@ -1,0 +1,23 @@
+{
+  "skill_name": "stateful-workloads",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "deploy postgres on our k8s cluster",
+      "expected_output": "Uses a StatefulSet for stable pod identity, provisions a StorageClass backed by network-attached replicated storage with reclaim policy Retain, prefers an existing operator (e.g. a Postgres operator) for failover/backup logic over hand-rolling it, and builds backup automation in from day one rather than as a follow-up.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "a node died and our stateful pod's data is gone",
+      "expected_output": "Diagnoses storage tied to the node instead of the cluster (local/ephemeral volumes) as the cause, fixes it by moving to network-attached replicated storage with reclaim policy Retain, and calls for an explicit pod-disruption test (cordon node, delete pod) to verify recovery going forward.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just autoscale the statefulset like we do our stateless services",
+      "expected_output": "Pushes back that scaling a StatefulSet must be deliberate, not automatic, since adding/removing a stateful member usually requires a rebalance or resync that autoscaling logic knows nothing about, and clarifies a StatefulSet only gives stable identity, not replication/quorum/failover handling.",
+      "files": []
+    }
+  ]
+}

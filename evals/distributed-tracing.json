@@ -1,0 +1,23 @@
+{
+  "skill_name": "distributed-tracing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "instrument this service with opentelemetry spans",
+      "expected_output": "Creates a span per unit of work worth timing on its own (HTTP call, DB query, cache lookup, queue publish) rather than one per function call, attaches query text/cache hit/retry count as attributes instead of extra spans, and verifies context propagation through every hop including queues and third-party clients.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "trace for a slow request has a gap and service B looks slow but we can't tell why",
+      "expected_output": "Points out the gap likely means a service or async boundary (message queue, background worker, third-party client) is dropping propagated context, breaking everything downstream of it; recommends reading the waterfall for the widest gap or longest leaf span within B rather than assuming B's code itself is slow.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "tracing costs are up, let's just cut retention to a week",
+      "expected_output": "Pushes back that cost should be diagnosed as a sampling-policy problem first: check whether the sample rate is letting through too many boring routine traces, then check attribute cardinality, and only touch retention last since it degrades every trace equally including the ones worth keeping.",
+      "files": []
+    }
+  ]
+}

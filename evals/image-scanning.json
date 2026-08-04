@@ -1,0 +1,23 @@
+{
+  "skill_name": "image-scanning",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up a trivy scan gate in our pipeline",
+      "expected_output": "Scans at build time before push rather than only at rest, defines a severity-and-fix-availability gate policy (block critical/high with a fix, warn without one, log medium/low) instead of blocking on raw CVE count, and enables secret scanning alongside CVE scanning as an automatic block.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we have 300 open findings and nobody's triaging them",
+      "expected_output": "Diagnoses noise from an unfiltered severity gate and recommends sorting by upgrade-available first, filtering by reachability where the scanner supports it, and replacing silent ignores with documented, time-boxed exceptions that have an owner and review date.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's block the build on every single CVE, no exceptions",
+      "expected_output": "Pushes back that blocking on every CVE regardless of exploitability or fix availability trains engineers to route around the scanner, and recommends gating by severity plus whether a fix exists and the code path is reachable, per a written policy rather than an ad hoc threshold.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "network-security",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "design security groups for our new three-tier app",
+      "expected_output": "Segments by trust boundary (public, application, data tiers) with prod/staging/dev never sharing reachability, sets a default-deny baseline with only explicit allow rules added, and includes an egress allowlist by destination rather than leaving outbound traffic open.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "a compromised container was able to reach our production database directly",
+      "expected_output": "Diagnoses this as a flat network or overly wide security group lacking tier segmentation and default-deny, and fixes it by segmenting around blast radius so the app tier cannot reach the data tier without an explicit rule, then auditing existing rules against actual traffic to remove what's unused.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "outbound traffic can just be allow-all, we only care about locking down inbound",
+      "expected_output": "Pushes back: unrestricted egress is exactly backwards since a compromise's next move is exfiltration or pulling a second-stage payload; recommends egress allowlisting by destination just as deliberately as ingress is controlled.",
+      "files": []
+    }
+  ]
+}

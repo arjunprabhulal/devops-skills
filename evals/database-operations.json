@@ -1,0 +1,23 @@
+{
+  "skill_name": "database-operations",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "help me size our postgres connection pool",
+      "expected_output": "Sizes pools from the database's max-connections budget backward across every service and environment rather than each service's own guess, recommends a pooler like PgBouncer/PgProxy/RDS Proxy for many short-lived clients, and sets an alert on pool saturation before connections start getting rejected.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "adding an index locked our orders table for 10 minutes",
+      "expected_output": "Diagnoses the blocking build as the root cause and prescribes building the index concurrently instead, plus replaying the migration against a production-sized copy first to know lock duration before running it against production again.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just run this migration straight on prod tonight, it's a small change",
+      "expected_output": "Pushes back on running an untested migration directly against production, insisting it be replayed against a production-sized copy first so lock behavior and table rewrite time are known, and that indexes/columns use online-safe variants (concurrent build, no blocking default).",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "incident-response",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "prod is down, help me run this incident",
+      "expected_output": "Names an incident commander within the first five minutes, sets a severity level that matches current customer impact, and pushes to mitigate (rollback, failover, shed load) before diagnosing root cause.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "three engineers are fixing the same alert differently and nobody knows the status",
+      "expected_output": "Diagnoses this as the classic no-named-IC failure mode, assigns a single incident commander to own decisions, limits who can push changes, and moves to one channel of record with a fixed communication cadence.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's hold off on any fix until we're sure we know the root cause",
+      "expected_output": "Pushes back: mitigate before you diagnose, since a reversible mitigation like rollback or traffic shift reduces customer harm now, and root-causing under live impact is optimizing for the wrong goal - understanding can follow once impact is stopped.",
+      "files": []
+    }
+  ]
+}

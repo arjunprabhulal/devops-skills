@@ -1,0 +1,23 @@
+{
+  "skill_name": "resource-tagging",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "we need a tagging strategy for our cloud resources",
+      "expected_output": "Designs a small required taxonomy such as owner, cost-center, environment, and service before proposing enforcement, keeping the list short enough that no team has a plausible excuse to skip a field.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "finance can't tell which team owns half our cloud spend",
+      "expected_output": "Diagnoses missing or inconsistent tags (e.g. prod vs Production) as the root cause, recommends a scheduled sweep to find untagged and mistagged resources with owned remediation, and routes the untagged-and-unattributed bucket to a visible owner.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's write tagging guidelines in the wiki and ask teams to follow them",
+      "expected_output": "Pushes back that a documented policy without enforcement is only a suggestion that won't survive a deadline, and recommends enforcing required tags at provision time via Terraform policy checks or admission control that fails the step rather than warns.",
+      "files": []
+    }
+  ]
+}

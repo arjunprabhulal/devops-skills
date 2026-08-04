@@ -1,0 +1,23 @@
+{
+  "skill_name": "chaos-engineering",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "let's run a game day testing our database failover",
+      "expected_output": "Writes a stated hypothesis and confirming metric before running anything, defines steady-state business metrics measured beforehand, bounds the blast radius with an automatic abort, and runs it as a real game day paging the actual on-call and using the real runbook.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we killed a pod in prod and things broke worse than expected, no plan for it",
+      "expected_output": "Diagnoses missing steady-state baseline and unbounded blast radius as the failure; recommends defining steady-state metrics and thresholds before injection, scoping to the smallest slice with an automatic abort condition, and validating experiment mechanics in staging first next time.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just kill random pods and nodes overnight and see what breaks",
+      "expected_output": "Pushes back: random unattended breakage is not an experiment, it's a demo with no hypothesis; recommends stating a hypothesis and steady-state metric in advance, and running during business hours with responders present so there's a controlled kill switch, not 2am unattended.",
+      "files": []
+    }
+  ]
+}

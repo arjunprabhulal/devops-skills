@@ -1,0 +1,23 @@
+{
+  "skill_name": "cloud-budgeting",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up a budget alert for our monthly cloud spend",
+      "expected_output": "Ties alerts to forecasted trajectory rather than only the final month-end total, e.g. an informational alert at 50% consumed by day 10 and a page when forecasted to exceed budget by more than 10%, so the team has runway to act mid-cycle.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we got blindsided by a huge invoice at the end of the month",
+      "expected_output": "Diagnoses that alerts only fired on the final month-end total instead of forecasted trajectory, and recommends trend-based forecasting adjusted for known upcoming changes plus rate-of-change anomaly detection per cost category so overruns surface mid-cycle.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's skip showback and just start charging teams for their cloud usage now",
+      "expected_output": "Pushes back that chargeback before showback turns every dispute into a fight about tag accuracy, and recommends letting teams see and validate their own showback numbers first to build trust before switching on chargeback.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "caching-strategies",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "should we add a cache in front of our product search endpoint?",
+      "expected_output": "Recommends caching only because it's expensive/read-heavy, defaults to cache-aside as the simplest pattern, sets the TTL from a stated staleness tolerance for search results, invalidates on write rather than relying on TTL alone, and adds jitter/single-flight protection against stampedes on popular keys.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "every time a popular cache key expires our db gets hammered",
+      "expected_output": "Diagnoses a thundering-herd stampede on expiry and fixes it with jitter on TTLs so keys don't expire in sync, plus a lock/single-flight pattern so only one request repopulates the key while others wait, or serves stale data briefly during background refresh.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's cache the account balance for 10 minutes to take load off the db",
+      "expected_output": "Pushes back on caching a strict-consistency value like account balance, noting it should be skipped from caching unless invalidation is airtight, and that the cache decision needs an explicit staleness tolerance and invalidate-on-write story rather than a convenient round-number TTL.",
+      "files": []
+    }
+  ]
+}

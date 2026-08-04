@@ -1,0 +1,23 @@
+{
+  "skill_name": "internal-developer-platform",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "help scope the roadmap for our new platform team",
+      "expected_output": "Treats the platform as a product with a named product owner accountable for adoption, runs discovery by interviewing teams and watching where they get stuck, and ties every roadmap item to a specific developer pain point rather than the platform team's own architectural preferences.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we built an IDP but teams keep bypassing it and doing things manually",
+      "expected_output": "Diagnoses this as the paved road not matching how good teams already work or a missing/hard-to-find escape hatch, and recommends measuring voluntary adoption and time-to-first-deploy rather than just mandating usage, then modeling the next paved road on an existing team's working setup.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just apply the generated terraform silently, no need to show devs the plan",
+      "expected_output": "Pushes back that hiding the generated manifest is bad abstraction because a developer must be able to explain what infrastructure their service runs on, and recommends showing the generated plan/YAML and keeping debugging primitives like logs and kubectl accessible without a platform-team ticket.",
+      "files": []
+    }
+  ]
+}

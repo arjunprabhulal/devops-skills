@@ -1,0 +1,23 @@
+{
+  "skill_name": "kubernetes-storage",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up persistent storage for a 3-node postgres cluster",
+      "expected_output": "Recommends a StatefulSet with volumeClaimTemplates so each replica keeps its own stable PVC and network identity, uses ReadWriteOnce access mode since each pod owns its volume for write consistency, and sets reclaim policy to Retain since the data cannot be regenerated.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "PVC has been stuck Pending for 20 minutes",
+      "expected_output": "Runs kubectl describe pvc for the provisioning failure reason, checks kubectl get storageclass for whether the referenced class exists or a default is set, and considers a zonal mismatch between where the pod was scheduled and where the provisioner can create the volume.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just use ReadWriteMany for everything so we don't hit access mode issues later",
+      "expected_output": "Pushes back: RWX by default forces a slower, more expensive filesystem-based backend (NFS/EFS/Filestore) that most workloads don't need; RWO is the right default for databases and single-owner stateful apps, and RWX should only be chosen for a concrete concurrent shared-access requirement.",
+      "files": []
+    }
+  ]
+}

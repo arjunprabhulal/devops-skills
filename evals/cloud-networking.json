@@ -1,0 +1,23 @@
+{
+  "skill_name": "cloud-networking",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "lay out the VPC subnets and CIDR ranges for a new account",
+      "expected_output": "Plans CIDR ranges with headroom for future subnets before provisioning, checks against every network it may ever need to peer with, and separates public subnets (load balancers, NAT/bastion) from private subnets by function.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our app in the private subnet can't reach the S3 bucket",
+      "expected_output": "Checks whether traffic is being routed to the public internet via NAT instead of a private endpoint/private-link, and recommends using a private endpoint so managed-service traffic never traverses the public internet.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "just open egress to all outbound traffic so nothing breaks, we'll lock it down later",
+      "expected_output": "Pushes back that egress should default to deny with explicit allow-listed destinations, especially for sensitive workloads, since outbound is the exact path exfiltration and compromised dependencies use and rarely gets revisited once open.",
+      "files": []
+    }
+  ]
+}

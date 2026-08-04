@@ -1,0 +1,23 @@
+{
+  "skill_name": "observability",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "what should we instrument before this service ships",
+      "expected_output": "Deliberately types each new signal as metric, log, or trace rather than defaulting to logging everything, wires RED for the request path and USE for finite resources, and requires a shared correlation ID linking metrics to logs and traces.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "outage last night and we had zero warning, nothing paged",
+      "expected_output": "Points out that dashboards and metrics alone answer questions asked in advance, and the gap is likely missing RED/USE coverage on the affected service, no symptom-based alert on error rate or budget burn, or a missing correlation ID that would have let them pivot from a spike to the specific logs and trace.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just log the user_id and request_path on every metric so we can drill in",
+      "expected_output": "Pushes back that high-cardinality identifiers like user_id and unbounded request_path belong in logs and trace attributes, not metric labels, since that will blow up cardinality and cost; recommends keeping metric labels low-cardinality and correlating via a shared request/trace ID instead.",
+      "files": []
+    }
+  ]
+}

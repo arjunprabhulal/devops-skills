@@ -1,0 +1,23 @@
+{
+  "skill_name": "disaster-recovery",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "help us set up a disaster recovery plan for losing our primary database",
+      "expected_output": "Starts by getting business-approved RTO and RPO targets before designing anything, picks a failover pattern matched to the actual feared failure mode, and requires the recovery plan to be stored and reachable independent of the primary infrastructure.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our backups show green every night but we've never actually restored one",
+      "expected_output": "Flags that an unrestored backup is an unverified belief, not a backup; recommends automating periodic restore-and-verify into an isolated environment, alerting as loudly on restore failure as backup failure, and testing restore into a different account/region.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "our architect announced a DR failover drill for next tuesday, he'll run it himself",
+      "expected_output": "Pushes back: an announced, architect-run drill tests nothing about real conditions - recommends rotating who runs the drill (not the primary system owner), timing it end-to-end against the stated RTO, and including boring parts like DNS cutover and cert reissuance.",
+      "files": []
+    }
+  ]
+}

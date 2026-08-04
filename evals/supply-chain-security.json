@@ -1,0 +1,23 @@
+{
+  "skill_name": "supply-chain-security",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up SBOM generation and artifact signing for our release pipeline",
+      "expected_output": "Generates an SBOM as a build step (Syft, cdxgen, etc.) stored alongside the artifact indexed by build ID, signs every artifact with cosign/sigstore or an identity-based flow, and enforces signature (and provenance) verification as a fail-closed admission gate at deploy time.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "same commit keeps producing different dependency versions on rebuild",
+      "expected_output": "Diagnoses unpinned dependencies or floating tags/version ranges as the cause and fixes it by pinning exact versions with a lockfile and verifying package checksums/signatures, so a build run twice from the same commit is byte-identical.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "can we just use FROM node:latest and npm install to keep it simple",
+      "expected_output": "Pushes back: floating tags and unpinned installs let the same build command silently pull a different, potentially compromised artifact tomorrow; recommends a pinned, digest-referenced base image and npm ci against a committed lockfile instead.",
+      "files": []
+    }
+  ]
+}

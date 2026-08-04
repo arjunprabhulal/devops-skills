@@ -1,0 +1,23 @@
+{
+  "skill_name": "network-troubleshooting",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "our api connection is timing out and I have no idea where to start",
+      "expected_output": "Works through the stack in order: dig to confirm DNS resolves as expected against both the system resolver and the authoritative server, traceroute/mtr for reachability, curl -v or openssl s_client for the port and TLS handshake, then ss for local socket state before touching the application.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "traceroute just shows total packet loss partway through the route, is it down",
+      "expected_output": "Notes total loss with no partial path on a normally-working route often means a firewall silently dropping (DROP looks identical to loss) rather than real routing failure, since an explicit REJECT would send something back, and points at the specific hop where it consistently stops.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just start with tcpdump since it'll show us everything",
+      "expected_output": "Pushes back: tcpdump is the last resort because it produces the most data to sift through; recommends isolating the layer first with dig, traceroute/mtr, and curl -v/openssl before capturing packets, and filtering tightly before capturing rather than after.",
+      "files": []
+    }
+  ]
+}

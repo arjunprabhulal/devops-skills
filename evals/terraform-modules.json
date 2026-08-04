@@ -1,0 +1,23 @@
+{
+  "skill_name": "terraform-modules",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "design a terraform module for our vpc setup",
+      "expected_output": "Bases the interface on comparing at least two or three real call sites rather than guessing, gives every variable a description and sane default with input validation, exposes only the outputs callers need, and pins the module to an exact version/tag.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "every time someone bumps a module we get surprise breakage",
+      "expected_output": "Diagnoses an unpinned module source floating on a branch or unpinned registry version, and fixes it by pinning to an exact version or Git tag with deliberate, changelog-reviewed bumps instead of implicit upgrades via terraform init -upgrade.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "i wrote a module after the very first vpc config so we can reuse it right away",
+      "expected_output": "Pushes back: extracting from a single use case bakes in that example's assumptions as general requirements; wait for a third real repetition so the varying parts of the interface are actually known before building the abstraction.",
+      "files": []
+    }
+  ]
+}

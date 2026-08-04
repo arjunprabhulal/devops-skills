@@ -1,0 +1,23 @@
+{
+  "skill_name": "data-migration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "we need to rename a column on a live production table",
+      "expected_output": "Structures the change as expand-migrate-contract: add the new column alongside the old one, backfill in small resumable throttled batches while dual-writing, verify both old and new paths under real production load with a divergence check, then remove the old column only after an observation period as its own reversible deploy.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our backfill job died halfway and now we're not sure what got updated",
+      "expected_output": "Diagnoses the backfill as not idempotent/resumable, and fixes it to batch by a bounded key range or row count with each batch committed separately and throttled, so re-running after an interruption resumes cleanly without double-processing rows.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just write one script that migrates old schema to new schema and run it in a maintenance window",
+      "expected_output": "Pushes back that a single atomic cutover is a scheduled outage with a script attached, and insists on splitting the change into independently deployable expand, migrate, and contract phases so old and new code paths coexist safely and each phase is independently reversible.",
+      "files": []
+    }
+  ]
+}

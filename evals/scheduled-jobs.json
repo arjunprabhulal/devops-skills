@@ -1,0 +1,23 @@
+{
+  "skill_name": "scheduled-jobs",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up a nightly cron job to roll up yesterday's usage data",
+      "expected_output": "Keys the job's effect on the scheduled time or a run ID rather than computing 'yesterday' from now() so a late run stays correct, makes the write an upsert instead of an append, adds an explicit TTL'd lock to prevent overlapping runs, and adds a dead man's switch heartbeat that pages if the job hasn't succeeded within its expected window.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "the nightly job just stopped running and nobody noticed for days",
+      "expected_output": "Diagnoses the failure-only monitoring gap: alerting on job failure doesn't catch a scheduler that stopped firing entirely, since an absent run produces zero failed runs and zero alerts; recommends a dead man's switch heartbeat checked independent of the scheduler, alerting on absence not just failure.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just schedule it at 9am local time and not worry about it",
+      "expected_output": "Pushes back: a job scheduled in fixed local/UTC-offset time silently shifts an hour twice a year at DST transitions with nothing erroring; recommends scheduling in UTC when local time doesn't matter, or using a DST-aware scheduler and testing against both spring-forward and fall-back transition dates when it does.",
+      "files": []
+    }
+  ]
+}

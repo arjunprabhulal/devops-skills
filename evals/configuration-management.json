@@ -1,0 +1,23 @@
+{
+  "skill_name": "configuration-management",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "write an ansible playbook to ensure nginx is installed and running",
+      "expected_output": "Uses the apt/package and service modules to declare desired state rather than raw shell commands, so reported changed/ok status is honest and a second run against the same host reports zero changes.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "running our playbook twice still shows changes the second time",
+      "expected_output": "Diagnoses tasks using raw shell/command instead of idempotent modules (or shell commands missing creates/changed_when guards), and treats any 'changed' on an already-configured host as a bug to fix so reruns converge to zero changes.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "our fleet autoscales and gets replaced constantly, let's still write a big convergence playbook for it",
+      "expected_output": "Pushes back: config management solves drift reconciliation on long-lived mutable hosts, but for an autoscaled, frequently-replaced fleet, baking a golden image and replacing instances (immutable-infrastructure) is simpler and more reliable, and the choice should be a documented decision.",
+      "files": []
+    }
+  ]
+}

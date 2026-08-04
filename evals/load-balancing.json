@@ -1,0 +1,23 @@
+{
+  "skill_name": "load-balancing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "configure health checks for our backend pool",
+      "expected_output": "Recommends a check that exercises a real dependency path rather than just confirming the process is listening, distinguishes liveness from readiness so the balancer only acts on readiness, and sets failure/success thresholds deliberately to avoid flapping.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "traffic is landing really unevenly across our backends even though everything shows healthy",
+      "expected_output": "Points out a balancer can report 100% healthy while distributing unevenly, and recommends graphing per-backend request rate and latency rather than trusting the aggregate health-check pass rate, checking for stale weights or an AZ being starved.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just kill the old backends immediately during deploys, faster rollout",
+      "expected_output": "Pushes back: abruptly removing backends mid-request fails in-flight requests, and recommends connection draining that marks the backend not-accepting-new while letting existing connections finish within a bounded grace period.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "log-management",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up logging for our new checkout service",
+      "expected_output": "Emits structured JSON fields with a consistent shared schema (level, timestamp, service, message, request fields) instead of free-text sentences, sets levels by required human action, propagates a correlation/trace ID set at the entry point onto every line including successes, and masks known-sensitive fields at the logging library level.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our log bill tripled and on-call ignores ERROR logs now",
+      "expected_output": "Diagnoses two separate issues: cost is likely from logging 100% of routine successful requests instead of sampling them while keeping errors and outliers at full rate, and ERROR noise is likely expected/handled events (retries, routine 404s) logged at ERROR that trained people to ignore it, which should move to WARN or INFO.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "can we just log the full request including the auth header, easier to debug",
+      "expected_output": "Pushes back that secrets like auth headers and tokens must be stripped or masked at the logging library level by construction, not left to per-call-site review, since logs get copied, exported, and retained longer than most other data.",
+      "files": []
+    }
+  ]
+}

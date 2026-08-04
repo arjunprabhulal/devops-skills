@@ -1,0 +1,23 @@
+{
+  "skill_name": "cloud-migration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "help us plan the migration of our on-prem workloads to AWS",
+      "expected_output": "Assigns each workload one of the 6 Rs with a one-line reason instead of defaulting everything to rehost, sequences the migration by dependency graph and risk rather than ease, and requires a rollback plan written and rehearsed before cutover.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our migration cutover is stalling and nobody trusts the switch date",
+      "expected_output": "Diagnoses likely causes as an untested rollback plan or no canary slice of real traffic validated against baseline, and asks for a rehearsed rollback and a canary phase before treating the cutover as ready.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just lift-and-shift everything as-is, it's fastest and we can clean it up later",
+      "expected_output": "Pushes back that defaulting everything to rehost carries architectural debt forward at cloud prices, and asks that each workload get a deliberate R assignment (retire/retain/rehost/replatform/refactor) rather than a blanket lift-and-shift, especially for anything that will live for years.",
+      "files": []
+    }
+  ]
+}

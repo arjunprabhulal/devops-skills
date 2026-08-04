@@ -1,0 +1,23 @@
+{
+  "skill_name": "infrastructure-testing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "add tests for our terraform modules before we merge changes",
+      "expected_output": "Builds a pyramid starting with lint/format and validate/plan as fast local checks, adds a required policy-check gate that blocks on violations rather than just reporting them, unit tests the module by asserting on generated plan output across its documented input combinations without provisioning real infrastructure, and reserves an ephemeral environment for what static checks can't prove.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "the plan applied clean but it deleted a production database",
+      "expected_output": "Diagnoses that a clean plan was treated as sufficient review instead of being diffed against intent; recommends reading plan output for resource replacement (delete-then-recreate) not just change counts, and requiring human review of plan output on any stateful-resource change even when policy checks pass.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's have the policy check just report violations, don't block the pipeline",
+      "expected_output": "Pushes back: a policy check that reports without blocking is documentation, not enforcement, and gets ignored under deadline pressure exactly when it matters most; recommends blocking the pipeline on policy failures above a defined severity, requiring an explicit logged override rather than a silent warning.",
+      "files": []
+    }
+  ]
+}

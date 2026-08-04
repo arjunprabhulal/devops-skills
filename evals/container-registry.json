@@ -1,0 +1,23 @@
+{
+  "skill_name": "container-registry",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up our registry retention and access policy",
+      "expected_output": "Defines an automated retention policy that never expires tags referenced by an active deployment, caps per-branch build history, and sweeps dangling manifests on a schedule, plus scopes push access to CI service identities only while pull access is scoped per-repository rather than a shared org-wide credential.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "production is suddenly running an old version of the image with no deploy on record",
+      "expected_output": "Diagnoses that the deployment is likely pulling a mutable tag like latest that got overwritten by a later push, and recommends deploying by immutable identifier (git SHA, semver, or content digest) so every running deployment traces to one unchangeable image.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "can we just deploy straight off the :latest tag, saves retagging",
+      "expected_output": "Pushes back that latest is a mutable pointer that can change underneath a running deployment with no record of what shipped, and recommends tagging with an immutable identifier and deploying by that digest, keeping latest only as a human-facing convenience pointer.",
+      "files": []
+    }
+  ]
+}

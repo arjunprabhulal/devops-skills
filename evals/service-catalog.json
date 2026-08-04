@@ -1,0 +1,23 @@
+{
+  "skill_name": "service-catalog",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up a service catalog for our org",
+      "expected_output": "Wires catalog registration into the scaffolding path itself so it happens automatically rather than as a manual form, requires owner fields to resolve to a real group backing on-call and access control rather than free text, and adds a CI check that fails a pipeline on missing owner, tier, or repo-link metadata.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "during the incident nobody could figure out who owns this service",
+      "expected_output": "Diagnoses this as stale or missing catalog metadata and recommends a CI gate that fails on missing owner/tier fields plus a scheduled audit for orphaned entries with owner groups that no longer exist, since a stale entry is worse than no entry.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just put 'owned by platform team' as a text field in the catalog",
+      "expected_output": "Pushes back that a free-text owner string is not queryable, pageable, or enforceable, and requires the owner field to resolve to a real identity/group tied to an actual on-call rotation and access-control group instead.",
+      "files": []
+    }
+  ]
+}

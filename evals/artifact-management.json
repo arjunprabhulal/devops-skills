@@ -1,0 +1,23 @@
+{
+  "skill_name": "artifact-management",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up our container registry and promotion flow across environments",
+      "expected_output": "Builds the artifact exactly once in CI with a content-addressed digest, promotes the same digest through staging and production as a metadata operation rather than a rebuild, attaches provenance (source commit, pipeline run ID, dependency manifest hash), and scopes registry access so no single credential can both push and cause a production deploy.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "staging and prod are running slightly different behavior for what should be the same release",
+      "expected_output": "Diagnoses this as likely rebuilding the artifact separately for each environment instead of promoting the same bytes, and recommends building once in CI and referencing the artifact by immutable digest everywhere so the digest running in production can be diffed against the digest that passed CI.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "can we just have the deploy job pull the myapp:latest tag, it's simpler",
+      "expected_output": "Pushes back that mutable tags like latest are not a safe deploy reference since they point at different bytes over time, and recommends deploying by content digest or immutable version instead, keeping latest only as a human-friendly alias, not the source of truth for automation.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "load-testing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up a load test before our Black Friday launch",
+      "expected_output": "Models the traffic mix and arrival pattern (including bursts) from real production logs rather than a guess, ramps load in steps to find both the throughput knee and the failure point, and reports p50/p95/p99 latency plus error rate by type at every step, not just an average.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we hit our target 5000 rps in the test but users say checkout is timing out",
+      "expected_output": "Points out throughput alone hid the problem because the test likely didn't report latency percentiles and error rate alongside it; recommends re-running with p50/p95/p99 and error-by-type at each load step, and correlating the latency knee with a saturated resource via performance-tuning.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just hammer the /search endpoint at max RPS to see when it breaks",
+      "expected_output": "Pushes back that a single-endpoint uniform blast doesn't resemble real traffic and misses contention between mixed flows; recommends deriving the operation mix and ramp pattern from real traffic logs, testing against real dependencies, and ramping in steps to find the knee, not just a collapse point.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "error-budgets",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "we have a 99.9% availability SLO, set up an error budget for it",
+      "expected_output": "Derives the budget mechanically from the SLO (43.2 minutes over 30 days), matches the budget window to the SLO window, sets up burn-rate alerting rather than only tracking remaining balance, and defines a freeze policy for when it's exhausted.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we're not sure if we're allowed to ship this risky migration this week",
+      "expected_output": "Checks current burn rate and remaining budget rather than gut feeling, asks explicitly whether this is worth spending budget on, and checks whether the budget is already exhausted (which would trigger the freeze policy) versus healthy headroom for a deliberate spend.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "budget's exhausted but leadership wants to ship this one launch anyway, let's just make an exception quietly",
+      "expected_output": "Pushes back: a quiet override defeats the freeze mechanism as surely as never freezing - if leadership overrides, it must go through an explicit, visible exception process, otherwise the org learns the budget is decorative and every future budget conversation gets weaker.",
+      "files": []
+    }
+  ]
+}

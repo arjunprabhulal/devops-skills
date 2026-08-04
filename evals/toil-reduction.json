@@ -1,0 +1,23 @@
+{
+  "skill_name": "toil-reduction",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "what should we automate next on the team?",
+      "expected_output": "Recommends measuring time spent per recurring task category (frequency, not just duration) for a few weeks before picking a target, naming the top three toil sources by measured time rather than by gut feel or whoever complained loudest, and re-measuring after automating to confirm the toil actually dropped.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "on-call is nothing but manual tickets, we're drowning",
+      "expected_output": "Recommends first measuring the actual toil sources by frequency and time rather than assuming, sorting each recurring request into automatable toil versus judgment work that shouldn't be forced into automation, and checking whether recurring cross-team requests should become self-service instead of a faster internal script.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just auto-script every recurring task on our plate",
+      "expected_output": "Pushes back: not every recurring task is toil, some require a human to weigh context each time, and automating judgment either fails on the first edge case or silently removes a load-bearing decision; recommends checking each task against 'does this require judgment' and automating only the mechanical parts while leaving the call to a human.",
+      "files": []
+    }
+  ]
+}

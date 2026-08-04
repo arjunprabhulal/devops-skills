@@ -1,0 +1,22 @@
+{
+  "name": "arjunprabhulal",
+  "owner": {
+    "name": "Arjun Prabhulal"
+  },
+  "plugins": [
+    {
+      "name": "devops-skills",
+      "source": "./",
+      "description": "Agent Skills for DevOps: 88 field guides spanning CI/CD to FinOps.",
+      "category": "engineering",
+      "keywords": [
+        "devops",
+        "sre",
+        "kubernetes",
+        "platform-engineering",
+        "cloud"
+      ]
+    }
+  ],
+  "description": "Agent Skills for DevOps: 88 SKILL.md field guides spanning CI/CD to FinOps. Works in Claude Code, Antigravity, and via npx skills."
+}

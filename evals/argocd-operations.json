@@ -1,0 +1,23 @@
+{
+  "skill_name": "argocd-operations",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "we're adding 30 microservices to argocd, don't want to click through the ui for each",
+      "expected_output": "Recommends structuring this with app-of-apps or ApplicationSets (generated from a Git directory, cluster, or PR generator) rather than hand-creating Applications, so onboarding a new service is one small commit, not a manual argocd app create.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our application has been stuck on Progressing for 20 minutes, i keep hitting resync",
+      "expected_output": "Explains that resyncing blindly just repeats the same failure, and instead directs checking argocd app get --show-operation and the resource tree to find the specific unhealthy resource and its own events (bad health check, missing dependency, stuck PreSync hook, or admission rejection) before retrying.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "our custom operator's Application shows Healthy so the CRD rollout must be fine, let's ship",
+      "expected_output": "Pushes back that Argo CD reports custom resources with no built-in health check as Healthy by default regardless of actual state, so a green check on a CRD-backed Application isn't trustworthy without a written Lua health check, and Synced/Healthy should be treated as two independent signals.",
+      "files": []
+    }
+  ]
+}

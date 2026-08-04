@@ -1,0 +1,23 @@
+{
+  "skill_name": "multi-cloud",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "we're adding a second cloud provider for DR, what should we plan for",
+      "expected_output": "Requires the reason to be written down and defensible, distinguishes true portability from lowest-common-denominator design, budgets the ongoing operational headcount (a second IAM/network model, on-call), and requires the cross-provider failover to actually be drilled, not assumed.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we just realized parts of our stack are already running on two clouds and nobody planned it",
+      "expected_output": "Treats this as accidental multi-cloud from step 4, recommends inventorying what's running where including vendor/third-party dependencies, and either names a real reason to keep it or consolidates back to one provider.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's build a cloud-agnostic platform layer so we can swap providers whenever we want",
+      "expected_output": "Pushes back per step 5 that a universal abstraction reimplementing every provider's primitives becomes its own product with its own bug backlog, and 'just in case we need to switch' is not a legitimate reason listed in step 1; recommends a thin abstraction scoped only to the component that genuinely needs to move.",
+      "files": []
+    }
+  ]
+}

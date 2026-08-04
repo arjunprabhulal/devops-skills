@@ -1,0 +1,23 @@
+{
+  "skill_name": "api-gateway",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "add rate limiting and quotas at our api gateway",
+      "expected_output": "Separates rate limits (short-window, tied to a measured backend capacity number, protects the backend) from quotas (long-window, business entitlement per client), and ensures a 429 response tells the caller which control they hit and when to retry.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "gateway keeps timing out and now it's taking every backend down with it",
+      "expected_output": "Identifies the gateway as a single point of failure on the critical path for all backend traffic, recommends capacity-testing the gateway itself and deploying it with the same rigor (canary, rollback, redundancy across zones) as any production service.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "can we just reshape this one team's payload format inside the gateway config",
+      "expected_output": "Pushes back: business-specific transformation for a single backend doesn't belong in the gateway since it turns the gateway into an undeployable dependency every team is afraid to touch; recommends handling it in that service even at the cost of one more hop.",
+      "files": []
+    }
+  ]
+}

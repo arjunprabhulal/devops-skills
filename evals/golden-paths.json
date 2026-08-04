@@ -1,0 +1,23 @@
+{
+  "skill_name": "golden-paths",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "create a golden-path template for spinning up new services",
+      "expected_output": "Bundles structured logging, tracing, a working health/readiness endpoint, and an auth baseline into the template by default rather than as follow-up steps, consolidates to exactly one supported template for the task, and versions it explicitly with a migration deadline for older versions.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "services scaffolded from our template keep failing production readiness review",
+      "expected_output": "Diagnoses this as boring-but-critical defaults being bolted on after rather than bundled in, and recommends wiring structured logs, tracing, health checks, and sane resource limits into the template itself so a scaffolded service passes readiness review with zero changes.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's offer three different deploy templates so each team can pick their favorite",
+      "expected_output": "Pushes back that three recommended ways is the same as zero recommended ways since everyone picks differently and the platform ends up supporting all of them, and recommends consolidating to exactly one supported template per common task, folding common deviations back in instead of adding parallel options.",
+      "files": []
+    }
+  ]
+}

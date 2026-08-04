@@ -1,0 +1,23 @@
+{
+  "skill_name": "dashboards",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "build a dashboard for the payments service",
+      "expected_output": "First names the audience, the circumstance, and the decision the dashboard supports in one sentence, then lays panels out RED first (rate, error, duration each in its own single-question panel) with USE resource panels below, and sets the default time range to match that decision rather than a generic 24-hour default.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "nobody opens our service dashboard during incidents anymore",
+      "expected_output": "Diagnoses this as likely a wall-of-graphs built to show everything rather than answer one stated question for a specific audience, recommends checking panel view counts and deleting unused ones, and checking whether RED is buried below a wall of infrastructure gauges instead of appearing first.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "just put all our metrics on one panel with dual axes so it's compact",
+      "expected_output": "Pushes back that a panel with overlapping lines and dual Y-axes answers nothing at a glance and invites misleading visual correlation; recommends splitting into separate single-question panels (one for rate, one for errors, one for latency) each titled as the question it answers.",
+      "files": []
+    }
+  ]
+}

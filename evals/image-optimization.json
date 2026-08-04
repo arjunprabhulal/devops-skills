@@ -1,0 +1,23 @@
+{
+  "skill_name": "image-optimization",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "shrink our python image, it's huge",
+      "expected_output": "Switches to a slim or distroless base rather than scratch (unless the binary is fully static), chains RUN commands so cleanup happens in the same layer it's created, prunes dev dependencies via a production install flag or multi-stage copy, and measures the result with dive or docker history instead of guessing.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we deleted the apt cache in a later RUN but the image size didn't change",
+      "expected_output": "Explains that deleting files in a later layer does not reclaim the space earlier layers took, since layers are additive and immutable, and recommends chaining apt-get install and rm -rf /var/lib/apt/lists/* in the same RUN so temporary files never persist as their own layer.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "arm64 support is annoying, let's just keep a separate Dockerfile.arm64",
+      "expected_output": "Pushes back on maintaining parallel Dockerfiles and recommends a single manifest list built with docker buildx build --platform linux/amd64,linux/arm64, while flagging that any base image or dependency publishing only one architecture will surface as a build failure rather than a warning.",
+      "files": []
+    }
+  ]
+}

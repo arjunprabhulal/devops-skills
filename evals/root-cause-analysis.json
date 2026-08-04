@@ -1,0 +1,23 @@
+{
+  "skill_name": "root-cause-analysis",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "write the postmortem for yesterday's outage",
+      "expected_output": "Builds the timeline from cited sources (logs, deploy history, chat transcript) rather than memory, writes it blamelessly in systemic voice, lists multiple contributing factors across the stack rather than one root cause, and gives each action item a named owner and due date.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our postmortems name a cause and then nothing ever changes",
+      "expected_output": "Diagnoses missing action-item tracking as the failure; recommends every action item have a specific owner and date to be included at all, and a recurring review of open items separate from the postmortem meeting so unshipped items get caught before the failure mode recurs.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "just put in the postmortem that the engineer forgot to run the migration check",
+      "expected_output": "Pushes back: naming an individual violates blameless structure - reframes in systemic/passive voice around what made the decision look reasonable at the time (missing check, confusing process), and pushes to find the fuller stack of contributing factors rather than a single scapegoat.",
+      "files": []
+    }
+  ]
+}

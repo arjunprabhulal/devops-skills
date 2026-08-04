@@ -1,0 +1,23 @@
+{
+  "skill_name": "profiling",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "generate a flame graph for our payment service and find the hot path",
+      "expected_output": "Chooses sampling for low-overhead profiling near production, captures under realistic concurrency and data volume, and reads the flame graph by scanning for the widest frames first (not tallest/deepest) to trace the actual cost to a specific function or query.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "CPU usage looks totally fine but the endpoint is still slow",
+      "expected_output": "Explains a CPU profile is blind to time blocked on IO or locks, and recommends profiling memory allocation and IO/off-CPU wait separately, since a low-CPU slow endpoint is almost always blocked on IO or a lock rather than compute.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "the function is only 3 lines, it can't be the bottleneck, let's skip profiling it and optimize the big module instead",
+      "expected_output": "Pushes back that short functions called in a tight loop are frequently the real hot spot and intuition about code structure is unreliable; insists on profiling to find the widest frame in the flame graph before optimizing, rather than trusting which code looks more complex.",
+      "files": []
+    }
+  ]
+}

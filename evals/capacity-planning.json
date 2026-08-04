@@ -1,0 +1,23 @@
+{
+  "skill_name": "capacity-planning",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "can our infra handle projected growth for next year?",
+      "expected_output": "Builds a forecast from real historical growth metrics rather than a guessed percentage, models headroom against measured saturation points (queue depth, connection pool exhaustion) rather than raw utilization, and lists lead times per capacity type with calculated trigger dates.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "CPU is only at 60% but the queue keeps backing up and latency is spiking",
+      "expected_output": "Diagnoses that utilization is the wrong signal here; recommends finding the actual saturation point empirically (queueing, latency cliff) via load testing and planning headroom relative to that knee-of-the-curve rather than an arbitrary CPU percentage.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "black friday is 10x normal traffic, let's just add 20% headroom like usual",
+      "expected_output": "Pushes back: a 10x peak needs sizing to the peak multiple, not baseline plus a margin - recommends load-testing at the target peak ahead of time and having a degrade-gracefully plan for anything beyond forecast.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "cost-optimization",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "help me find ways to cut our cloud costs",
+      "expected_output": "Pulls the billing export or cost-explorer report first instead of optimizing from memory, ranks services and resources by dollar impact, and works top-down since the top five line items usually explain most of the spend variance.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we bought reserved instances but the bill keeps growing",
+      "expected_output": "Diagnoses that commitments were likely purchased against peak usage or an unrightsized fleet rather than a measured sustained baseline, and recommends rightsizing before buying further commitments so savings aren't locked in on top of waste.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's spend this sprint cleaning up every $10-20/month idle resource we can find",
+      "expected_output": "Pushes back that a $20/month item isn't worth an engineer's time or a change-review cycle, and redirects to sorting the bill by dollar impact first so the top cost drivers are found before small waste is chased.",
+      "files": []
+    }
+  ]
+}

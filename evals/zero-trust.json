@@ -1,0 +1,23 @@
+{
+  "skill_name": "zero-trust",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "help us move our internal services off implicit trust",
+      "expected_output": "Requires every service-to-service call to authenticate and authorize with a verifiable identity (mTLS with workload identity or short-lived per-call tokens), microsegments policy down to the workload rather than the subnet, and starts the rollout with the highest-value or most exposed systems first while keeping existing perimeter controls during the transition.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "a compromised pod in the app tier reached a database it had no business touching",
+      "expected_output": "Diagnoses this as segmentation stopping at the subnet/tier level instead of the workload, and fixes it by microsegmenting to the workload with each workload defaulted to zero allowed connections, adding exactly what its function requires, tied to workload identity rather than IP.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "it's an internal call inside the vpc so we don't need to authenticate it, right",
+      "expected_output": "Pushes back: being inside the network only proves you're on the network, not who's calling; every internal service-to-service call should independently authenticate and authorize via verified identity, the same as a call arriving from outside would.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "scripting-automation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "write a bash script to clean up stale ec2 volumes",
+      "expected_output": "Adds `set -euo pipefail` and an ERR trap so failures stop the script instead of limping forward, checks preconditions before the first side effect, makes deletion idempotent (checks existence before acting), ships a real `--dry-run` mode that exercises the actual logic path and defaults to dry-run for the destructive action, and logs every deleted resource with enough detail to reverse by hand.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "the deploy script died halfway and now reruns leave things half-changed",
+      "expected_output": "Diagnoses missing idempotency and resumability: the script isn't safe to run twice, so a re-run after an interrupted first attempt redoes or skips steps incorrectly; recommends checking state before changing it and making partial completion resumable so rerunning converges to the same end state.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just swallow that error so the script output stays clean",
+      "expected_output": "Pushes back: silencing an error is a false success report to whoever runs the script next; recommends exiting non-zero on real failure with a clear message naming what failed, rather than hiding it to keep output tidy.",
+      "files": []
+    }
+  ]
+}

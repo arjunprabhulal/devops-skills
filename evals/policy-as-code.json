@@ -1,0 +1,23 @@
+{
+  "skill_name": "policy-as-code",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "write a rego policy blocking public s3 buckets",
+      "expected_output": "Writes a narrowly-scoped, single-rule policy (e.g. deny-public-s3-acl) evaluated against the Terraform plan output before apply, includes both a passing and failing test fixture, and starts it in audit/log-only mode rather than immediately enforcing.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our policy check keeps warning but nothing ever actually gets blocked",
+      "expected_output": "Diagnoses that a policy left permanently in warn-only mode has the same effect as no policy, and recommends reviewing the audit-period findings, communicating a promotion date, and flipping it to a pipeline-failing enforcing check once the false-positive rate is near zero.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's turn this new policy on as a hard block right away, no audit period needed",
+      "expected_output": "Pushes back: a brand-new policy enforced immediately will almost certainly break a legitimate change nobody anticipated; ship it in audit/log-only mode first, review what it flags against real traffic, and only promote to enforcing once false positives are near zero.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "metrics-and-monitoring",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "add metrics to this new API service",
+      "expected_output": "Ships RED metrics before a dashboard exists: rate as a counter, errors as a counter partitioned by status class, and duration as a histogram (not a gauge), plus USE metrics for any finite resources the service depends on, with labels kept low-cardinality.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our prometheus queries are timing out and alerts fire inconsistently with what the dashboard shows",
+      "expected_output": "Diagnoses this as a missing recording-rule problem: heavy aggregations are being recomputed inline on every load, and the alert should read the same pre-computed recording-rule series the dashboard reads so they never disagree; also checks for a cardinality explosion driving the slow query.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's track the last request's latency with a gauge, easier to code",
+      "expected_output": "Pushes back that a gauge of last-request duration throws away the distribution and makes percentile queries impossible without a redeploy; recommends a histogram instead since latency needs p99, not a single last-sample value.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "iam-access-management",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up break-glass access to prod for on-call incidents",
+      "expected_output": "Designs break-glass as an explicit-invocation, auto-expiring path (minutes to hours) rather than a standing door, with every use logged with a reason and a mandatory post-use review, distinct from indefinite standing admin access.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "an auditor asked why priya still has prod db access from an incident 6 months ago",
+      "expected_output": "Diagnoses this as standing access that accumulated because it was granted individually rather than through a time-boxed role and never reviewed; fixes it by moving to role-based, short-lived grants and instituting a real quarterly access review cadence that actually revokes unused access, not just at offboarding.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "just give the new service an admin role for now, we'll scope it down later",
+      "expected_output": "Pushes back: 'scope it down later' rarely happens and standing broad access is a liability from day one; recommends granting through a narrowly defined, function-named role with least privilege and short-lived credentials instead of a static admin grant.",
+      "files": []
+    }
+  ]
+}

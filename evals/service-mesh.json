@@ -1,0 +1,23 @@
+{
+  "skill_name": "service-mesh",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "roll out mTLS across the mesh for compliance",
+      "expected_output": "Rolls out namespace by namespace starting in permissive mode to confirm nothing breaks before flipping to strict, enforces sidecar injection so no pod can skip it, and verifies certificate rotation is actually happening automatically rather than assuming it's configured.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "downstream service is getting hammered and falling over during incidents",
+      "expected_output": "Diagnoses compounding retries from both application code and mesh sidecar (e.g. 3x app retry wrapped by 3x mesh retry = 9 attempts) and recommends owning retries/timeouts at exactly one layer, verified by checking both app code and mesh config.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "we only have 5 services but let's add istio for the observability",
+      "expected_output": "Pushes back: a handful of services rarely justifies mesh operational overhead, and observability alone is usually achievable via distributed tracing and metrics tooling without a mesh; asks for the specific problem (multi-language retry consistency, mTLS compliance, coordinated traffic shifting) the mesh would solve that the existing stack can't.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "self-service-infrastructure",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "design a self-service flow for provisioning databases",
+      "expected_output": "Tiers requests by blast radius rather than resource type, auto-approves within baked-in guardrails like size limits, allowed regions, and budget caps enforced by policy-as-code, and requires a cost estimate plus owner/cost-center tag to be shown before the request can be submitted.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "developers keep going around the portal and using the aws console directly",
+      "expected_output": "Diagnoses this as the self-service path not being the path of least resistance, and recommends locking down direct provisioning access so any provisioning outside the flow requires an explicit, logged break-glass exception instead of a standing credential.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's require manual approval on every infrastructure request to stay safe",
+      "expected_output": "Pushes back that requiring sign-off on low-risk, repetitive requests turns approval into rubber-stamped theater, and recommends defaulting to auto-approve within guardrails while reserving human review only for production data stores, compliance boundaries, or requests above a cost threshold.",
+      "files": []
+    }
+  ]
+}

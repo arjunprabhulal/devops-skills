@@ -1,0 +1,23 @@
+{
+  "skill_name": "containerization",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "write a Dockerfile for this node app",
+      "expected_output": "Orders layers so package.json/package-lock.json are copied and npm ci runs before copying source, uses a multi-stage build that leaves compilers and caches out of the runtime stage, pins the base image by digest or explicit version, and creates and switches to a non-root user before CMD.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "every code change triggers a full dependency reinstall in ci",
+      "expected_output": "Diagnoses that COPY . . is happening before the dependency install step, and fixes the layer order so package manifests are copied and installed first, letting Docker cache the dependency layer across source-only changes.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just pass the api key with --build-arg, easier than secret mounts",
+      "expected_output": "Pushes back that build ARGs and ENV are baked into the layer and remain recoverable via docker history even after a later RUN deletes them, and recommends BuildKit secret mounts (RUN --mount=type=secret) or runtime injection via the orchestrator's secret store instead.",
+      "files": []
+    }
+  ]
+}

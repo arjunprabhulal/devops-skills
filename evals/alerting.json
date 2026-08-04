@@ -1,0 +1,23 @@
+{
+  "skill_name": "alerting",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "write a paging alert for the checkout service's SLO",
+      "expected_output": "Defines multi-window burn-rate alerts against the error budget (e.g. fast burn over 1h/5m windows pages, slow sustained burn over 6h/1h tickets) rather than a flat threshold, tags it with a severity tier by required response time, and requires a runbook link before it ships.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "on-call is exhausted, getting paged constantly but nothing's ever actually broken",
+      "expected_output": "Diagnoses likely cause-based alerts (pod restarts, disk thresholds) sitting in the page tier instead of symptom-based ones, recommends reviewing page volume per alert and demoting or deleting ones that fire often with no action taken, and reserving page-tier for symptoms a user would notice.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's page whenever any pod restarts or disk hits 80%",
+      "expected_output": "Pushes back that these are causes, not symptoms, and paging on them trains people to ignore alerts since a disk at 80% is often fine on its own; recommends surfacing causes on a dashboard for investigation and paging instead on symptoms like error rate, latency, or error-budget burn.",
+      "files": []
+    }
+  ]
+}

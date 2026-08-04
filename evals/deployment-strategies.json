@@ -1,0 +1,23 @@
+{
+  "skill_name": "deployment-strategies",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "how should we roll out changes to our payment service safely",
+      "expected_output": "Recommends canary or blue-green over the default rolling update given the high blast radius of payment paths, requires a tested rollback plan, wraps the risky path in a feature flag to separate deploy from release, and picks metrics specific to the change (error rate, p99 latency on the affected endpoint) with an automated abort condition rather than generic uptime.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we rolled back after a bad deploy but the app is still broken",
+      "expected_output": "Diagnoses a likely backward-incompatible database migration where the old code can't run against the new schema, and recommends the expand/contract pattern going forward (add, then migrate, then drop only after old code is retired) so rollback restores actual compatibility, not just the previous code.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "rollback plan is just 'redeploy the last version', we've never actually run it",
+      "expected_output": "Pushes back that an unexecuted rollback plan is a guess, not a plan, and insists on verifying the previous artifact is still available and actually restores prior behavior, timing the rollback at least once so it isn't first executed under pressure during a real incident.",
+      "files": []
+    }
+  ]
+}

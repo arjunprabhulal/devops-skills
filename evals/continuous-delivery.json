@@ -1,0 +1,23 @@
+{
+  "skill_name": "continuous-delivery",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "design a deploy pipeline from merge to production",
+      "expected_output": "Establishes that every commit on main should be deployable, automates promotion through environments with deliberate gates that check something CI can't (real infra, human sign-off), deploys on merge while decoupling release via feature flags, and makes the pipeline idempotent so it's the only path production changes through.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we ship maybe once every couple weeks even though deploys are automated",
+      "expected_output": "Diagnoses this as a process bottleneck (approval queues, batching) rather than a tooling problem, and recommends instrumenting lead time and deploy frequency to confirm, since no amount of pipeline engineering fixes a process-driven slow cadence.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "the staging approval step is basically always rubber-stamped, but let's keep it for compliance optics",
+      "expected_output": "Pushes back that an always-approved manual gate is worse than no gate because it adds latency while giving false confidence a human is actually checking, and recommends either making it a real automated check or removing it rather than keeping it as ceremony.",
+      "files": []
+    }
+  ]
+}

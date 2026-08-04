@@ -1,0 +1,23 @@
+{
+  "skill_name": "gitops",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "how should we lay out our deployment repo for prod and staging",
+      "expected_output": "Recommends separating the app repo from the config repo the reconciler watches, modeling each environment as its own directory or overlay, and promoting changes by merging or copying forward so 'what's different between staging and prod' is answerable with a single git diff.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "someone ran kubectl edit on prod last week and now it's drifted from git, no one noticed",
+      "expected_output": "Flags that undetected drift means the repo has quietly stopped being the true source of truth, and recommends configuring the reconciler to detect and either auto-heal or loudly alert on drift within one reconciliation cycle, excluding only fields expected to diverge like HPA-managed replicas.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "prod is broken, let's just kubectl apply the fix directly and backfill the commit later",
+      "expected_output": "Pushes back that any direct apply, even an emergency one, turns the repo into a suggestion rather than the source of truth, and insists the fix go through a commit first (even a fast one made and merged during the incident) so the reconciler applies it and the audit trail stays real.",
+      "files": []
+    }
+  ]
+}

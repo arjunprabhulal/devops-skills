@@ -1,0 +1,23 @@
+{
+  "skill_name": "developer-experience",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "how should we measure developer productivity",
+      "expected_output": "Instructs instrumenting the loop before optimizing anything: baseline time-to-first-commit, local build/test wall-clock time, CI queue time plus execution time separately, and deploy lead time, using DORA's four keys as a floor and adding local-loop metrics DORA misses.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "new hires take half a day just to get a local environment running",
+      "expected_output": "Diagnoses this as a setup-friction problem to fix directly: standardize on one documented path such as a devcontainer, Nix, or a single setup script so there is one command to a running app, treat any remaining manual step as a bug, and ensure parity with production config.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's write a script to automate this manual approval step",
+      "expected_output": "Pushes back that automating a broken process just makes the breakage run faster, and asks whether the approval should exist at all before scripting it away, per the cut-toil-before-automating-it step.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "ci-pipelines",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up a github actions ci workflow for our node app",
+      "expected_output": "Orders stages cheapest-and-most-likely-to-fail first (lint/type-check, then unit tests, then integration/e2e), pins the runner image, toolchain version, and action SHAs, uses npm ci with a lockfile, and keys caching on a hash of the lockfile rather than branch name.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "ci passed yesterday, same commit fails today",
+      "expected_output": "Diagnoses this as a reproducibility failure from unpinned dependencies (floating action tags, 'latest' toolchain versions, or a cache keyed on something other than lockfile hash) and fixes it by pinning the runner image, language version, and action SHAs so re-running the same commit produces the same result.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just deploy to staging at the end of the same ci workflow that runs our tests",
+      "expected_output": "Pushes back on conflating CI and CD in one pipeline, explaining that a slow or failing deploy step would block unrelated PRs from getting a correctness signal, and recommends keeping CI (runs on every push/PR) separate from a CD pipeline that triggers on merge to main.",
+      "files": []
+    }
+  ]
+}

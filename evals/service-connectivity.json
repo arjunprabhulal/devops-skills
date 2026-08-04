@@ -1,0 +1,23 @@
+{
+  "skill_name": "service-connectivity",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set retry and timeout policy for calls to the payments service",
+      "expected_output": "Sets an explicit timeout first, shorter than the caller's own caller's timeout, then a retry policy with exponential backoff limited to idempotent operations, then a circuit breaker on top that fails fast rather than queuing once open.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "one slow downstream and now the whole upstream service ran out of memory",
+      "expected_output": "Diagnoses unbounded queuing from an upstream that kept accepting work at the same rate as the downstream slowed, and recommends bounded queues plus deliberate load shedding so backpressure propagates upstream instead of buffering into a collapse.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "it's internal traffic inside our VPC, we don't need mTLS between these services",
+      "expected_output": "Pushes back: network location proves nothing under a zero-trust posture, and internal traffic should still be authenticated by certificate at the connection level with automated rotation rather than assumed trusted by default.",
+      "files": []
+    }
+  ]
+}

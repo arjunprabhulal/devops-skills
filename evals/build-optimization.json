@@ -1,0 +1,23 @@
+{
+  "skill_name": "build-optimization",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "our monorepo build is way too slow, help speed it up",
+      "expected_output": "Optimizes in order: first makes the build hermetic (declared inputs only, no ambient state), then adds incremental builds so only affected targets rebuild, then layers a content-addressed remote/shared cache usable across CI runners, and only then parallelizes across the dependency graph.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "builds are fast now but ci keeps shipping bugs that pass locally",
+      "expected_output": "Diagnoses a non-hermetic build or a stale/incorrectly-keyed cache silently serving cached results instead of rebuilding, and recommends verifying that same inputs on different machines produce identical output and that cache keys are derived from content hashes, not branch names or manually bumped versions.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's cache the test results too so re-runs skip tests that already passed",
+      "expected_output": "Pushes back that caching outputs of the thing under test is unsafe, since it defeats the purpose of the check being run; only cache inputs like node_modules or dependency downloads, and treat cache misses as normal, not something to route around by caching verification itself.",
+      "files": []
+    }
+  ]
+}

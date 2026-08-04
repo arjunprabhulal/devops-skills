@@ -1,0 +1,23 @@
+{
+  "skill_name": "slo-definition",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "define an SLO for our checkout service",
+      "expected_output": "Picks an SLI measured close to the user (e.g. successful checkout completion, not just server-side 200s), sets the target below 100% derived from historical performance rather than a round number, states the resulting error budget in concrete units for the window, and writes a budget-exhaustion policy with a freeze threshold before it's needed.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we keep arguing mid-incident about whether we're reliable enough to keep shipping",
+      "expected_output": "Diagnoses the missing piece as a pre-agreed, written budget-exhaustion policy (freeze threshold, mandatory reliability work, named escalation path) defined before an incident, not negotiated in the moment; also checks whether the SLO target was ever derived from data or just picked.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's set the SLO to five nines so everyone knows we take reliability seriously",
+      "expected_output": "Pushes back that a target above what the system has ever sustained means the budget starts already spent and the policy never has real teeth; recommends deriving the target from historical performance and user tolerance instead of picking an impressive-sounding number.",
+      "files": []
+    }
+  ]
+}

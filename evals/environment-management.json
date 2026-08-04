@@ -1,0 +1,23 @@
+{
+  "skill_name": "environment-management",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up an ephemeral preview environment for each pull request",
+      "expected_output": "Provisions preview environments automatically from the same IaC used for permanent environments, seeds them with representative non-sensitive data, and tears them down automatically on merge or close rather than leaving them to accumulate as orphaned cost.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "this bug only happens in prod, staging looks fine",
+      "expected_output": "Treats the staging/prod divergence as a bug in staging's predictive value and checks the environment-differences table (topology, versions, integrations, data) for an undocumented divergence, since only scale/non-critical-data/cost differences should be defensible.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just fork the prod terraform directory to make a staging copy real quick",
+      "expected_output": "Pushes back: forking into a separate directory or branch guarantees drift as fixes land in one copy and not the other; instead use one codebase/module set with environment-specific values files (.tfvars) so differences show up in a diff.",
+      "files": []
+    }
+  ]
+}

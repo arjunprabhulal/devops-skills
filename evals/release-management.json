@@ -1,0 +1,23 @@
+{
+  "skill_name": "release-management",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "help us cut a release for our public api client library",
+      "expected_output": "Applies semver as a strict contract (major for any breaking change, minor for backward-compatible additions, patch for fixes only), generates the changelog from conventional commits/PR titles rather than from memory, and reduces the cut to a single repeatable script or pipeline job rather than a manual checklist.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we deployed service a and b together and now prod is broken",
+      "expected_output": "Diagnoses the failure as relying on assumed simultaneity for a multi-service release with a shared contract, and recommends writing an explicit deploy order (backward-compatible producer before consumer) so the in-between state during the gap doesn't break, rather than treating both deploys as atomic.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "it's a tiny breaking change, let's just bump the patch version",
+      "expected_output": "Pushes back that semver is a contract, not a convention, and any breaking change must be a major bump with no exceptions, since bumping patch for a breaking change forces every downstream consumer to read the diff instead of trusting the version number.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "rightsizing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "is our fleet oversized, help me rightsize it",
+      "expected_output": "Pulls actual CPU, memory, disk, and network utilization over a window that includes peak traffic rather than guessing, and sizes to a high percentile (p95/p99) appropriate to the workload's failure mode instead of the average.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we downsized an instance and now it's falling over during peak load",
+      "expected_output": "Diagnoses that sizing likely used average utilization or a quiet window instead of a peak-inclusive p95/p99 measurement, and recommends re-measuring after every resize to confirm the new size holds up under real traffic.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just pick the smallest instance type that keeps CPU usage low",
+      "expected_output": "Pushes back that CPU and memory (and storage/IOPS where relevant) are separate sizing problems that must each be checked against their own utilization data, since a resource sized only on CPU can be undersized on another dimension.",
+      "files": []
+    }
+  ]
+}

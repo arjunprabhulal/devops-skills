@@ -1,0 +1,23 @@
+{
+  "skill_name": "serverless",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "write a lambda handler that processes S3 upload events",
+      "expected_output": "Designs the handler to be correct with zero warm-instance assumptions, makes it idempotent against at-least-once delivery of the S3 event, and initializes expensive clients outside the handler without depending on that state persisting.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our function's p99 latency is terrible under low traffic",
+      "expected_output": "Diagnoses cold starts as the likely cause, recommends shrinking the deployment package, initializing clients outside the handler, and using provisioned/reserved concurrency for the latency-critical path while noting that's paying to opt out of serverless's cost model.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "we're moving our steady 24/7 traffic API to lambda to save ops burden",
+      "expected_output": "Flags that steady-state, always-on traffic is a poor fit for serverless per step 5, and asks for a cost-per-invocation comparison against a comparable always-on instance before committing.",
+      "files": []
+    }
+  ]
+}

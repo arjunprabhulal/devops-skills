@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+node_modules/
+*.log
+.env
+.env.*
+!.env.example
+*.pem
+_build/
+__pycache__/
+
+# Local agent settings — machine-specific, never shared
+.claude/settings.local.json

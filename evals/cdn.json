@@ -1,0 +1,23 @@
+{
+  "skill_name": "cdn",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set cache-control headers for our static assets and api responses",
+      "expected_output": "Sets near-infinite max-age with immutable for content-hashed static filenames since a new version gets a new URL, and picks a short TTL with stale-while-revalidate for frequently changing responses based on how stale an answer is tolerable to be wrong.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "one user is seeing another user's personalized data through the cdn",
+      "expected_output": "Identifies this as a cache key that's too narrow, missing a header or cookie the response actually varies by (like Accept-Language or an auth cookie), and flags it as a security bug requiring the key to capture every dimension of personalization or excluding the response from caching entirely.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just purge the whole cache on every deploy to be safe",
+      "expected_output": "Pushes back: a full purge forces every request to hit the origin at once, a thundering herd right when the origin is least proven stable; recommends targeted invalidation by URL/tag or content-hashed filenames that need no invalidation, reserving full purge for emergencies.",
+      "files": []
+    }
+  ]
+}

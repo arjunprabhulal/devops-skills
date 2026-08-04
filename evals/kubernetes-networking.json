@@ -1,0 +1,23 @@
+{
+  "skill_name": "kubernetes-networking",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "write a NetworkPolicy to lock down the payments namespace",
+      "expected_output": "Uses default-deny for both Ingress and Egress policyTypes first, then adds narrow explicit allow rules per legitimate traffic path, and notes NetworkPolicy only works if the cluster's CNI actually enforces it.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "getting connection refused hitting my service inside the cluster",
+      "expected_output": "Walks the chain starting with kubectl get endpoints before anything else, checks for a selector/label mismatch between the Service and pods, confirms pods are Ready (not just Running), and checks targetPort against what the container actually listens on.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just make every service type LoadBalancer so it's easy to reach",
+      "expected_output": "Pushes back: ClusterIP is the correct default for internal traffic and a LoadBalancer per Service doesn't scale cost-wise; recommends Ingress to multiplex HTTP services behind one entrypoint and choosing the Service type based on actual audience, not convenience.",
+      "files": []
+    }
+  ]
+}

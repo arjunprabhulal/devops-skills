@@ -1,0 +1,23 @@
+{
+  "skill_name": "multi-tenancy",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "onboard a new team namespace onto our shared cluster",
+      "expected_output": "Applies both a ResourceQuota (covering requests and limits, not just requests) and a LimitRange before the first workload lands, adds a default-deny NetworkPolicy with explicit allows for the tenant's own traffic and shared platform services, and ensures no ClusterRole binding is granted to the tenant.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "one team's deployment is starving everyone else's pods on the shared cluster",
+      "expected_output": "Diagnoses a missing ResourceQuota as the classic noisy-neighbor cause, adds a quota on both requests and limits plus a LimitRange for sane per-container defaults, and checks whether the tenant's controller/CRD watch loop is also degrading the API server, recommending API Priority and Fairness if so.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "external customers on the same cluster, namespaces plus RBAC should be enough isolation right?",
+      "expected_output": "Pushes back: mutually untrusted external customers need hard multi-tenancy, not soft-tenancy namespace+RBAC alone, since a shared kernel and control plane are themselves an attack surface; recommends dedicated node pools with taints/tolerations, sandboxing (gVisor/Kata), or separate clusters, with the decision written down explicitly.",
+      "files": []
+    }
+  ]
+}

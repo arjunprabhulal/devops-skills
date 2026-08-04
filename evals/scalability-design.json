@@ -1,0 +1,23 @@
+{
+  "skill_name": "scalability-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "design this new service to handle 10x traffic growth",
+      "expected_output": "Externalizes session/cache state out of the app tier so any instance can serve any request, chooses horizontal vs vertical scaling per component deliberately (e.g. horizontal app tier, vertical-then-partition for a single-writer database), and identifies which component would saturate first at 10x load.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we keep adding app server instances but throughput stopped improving",
+      "expected_output": "Diagnoses that a shared bottleneck downstream of the stateless tier (a single-writer database, shared lock, or serialized queue) is capping capacity regardless of app instance count, and recommends confirming it empirically via profiling/load-testing then partitioning or offloading it rather than adding more app boxes.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "sessions keep breaking on other instances, let's just add sticky sessions to fix it",
+      "expected_output": "Pushes back that sticky routing papers over statefulness instead of removing it and reintroduces a single point of failure per session; recommends externalizing session state to a shared cache or database so any instance can serve any request.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "helm-charts",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "design values.yaml for our new chart",
+      "expected_output": "Groups values by concern (resources, ingress, image) rather than by template file, documents each value's type and default in comments or a schema, and ensures sane defaults let the chart install with zero overrides.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "helm upgrade failed halfway and now the release is in a weird state",
+      "expected_output": "Points out the upgrade should have used --atomic --wait so a failed rollout auto-rolls-back, checks whether hooks are idempotent, and recommends helm rollback to the prior revision, verifying helm history stayed clean.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "we just copied values.yaml to values-prod.yaml and tweaked a few lines",
+      "expected_output": "Flags this as chart-fork drift: values-prod.yaml should be a short diff layered with -f on top of values.yaml, not a near-duplicate; if the prod file is nearly as long as the base, the base defaults themselves are wrong.",
+      "files": []
+    }
+  ]
+}

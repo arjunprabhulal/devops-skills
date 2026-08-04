@@ -1,0 +1,23 @@
+{
+  "skill_name": "progressive-delivery",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up an automated canary rollout for this service with argo rollouts",
+      "expected_output": "Defines an AnalysisTemplate combining an error-rate metric with a latency percentile (not average), sizes the canary weight steps to the service's traffic volume with pauses longer than one metric-collection interval, and configures automatic scale-to-zero rollback on analysis failure instead of a timer-based promotion.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our canary rolled out clean but users are complaining the new version is slow",
+      "expected_output": "Diagnoses that gating only on HTTP error rate misses technically-200-but-slower regressions, and recommends adding a p95 or p99 latency metric (not average, which hides tail regressions) plus a business metric where feasible to the AnalysisTemplate.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just run the canary for 10 minutes then promote to 100%, simpler than wiring up metric analysis",
+      "expected_output": "Pushes back that a time-based canary with no query against production metrics is just a delay, not a safety mechanism, since a regression that doesn't surface in that window still ships; recommends gating each step on an AnalysisTemplate with real error-rate and latency thresholds instead.",
+      "files": []
+    }
+  ]
+}

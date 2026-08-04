@@ -1,0 +1,23 @@
+{
+  "skill_name": "workflow-automation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "automate our incident-to-ticket workflow",
+      "expected_output": "Wires the workflow to trigger on the event itself (webhook or queue) rather than polling, carries a unique event ID through the chain for deduplication, makes each step idempotent by checking state before acting, adds a capped retry with backoff and a visible dead-letter path, and classifies each step as auto-run or approval-required based on blast radius.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "a retried webhook created duplicate resources in our workflow",
+      "expected_output": "Diagnoses the missing idempotency guarantee as the root cause; recommends keying the action on a stable identifier or desired-state hash and checking current state before acting so a second run converges instead of duplicating, and making the check-and-act atomic where possible.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just retry failed steps forever until they succeed",
+      "expected_output": "Pushes back: an unbounded retry loop on a permanently broken step burns resources without escalating, and if the step isn't idempotent it worsens state with every attempt; recommends a retry cap or duration limit, exponential backoff, and a terminal failure path that surfaces to a human via a dead-letter queue or dashboard.",
+      "files": []
+    }
+  ]
+}

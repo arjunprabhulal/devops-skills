@@ -1,0 +1,23 @@
+{
+  "skill_name": "operators-and-crds",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "design a CRD schema for our internal DatabaseCluster resource",
+      "expected_output": "Versions the apiVersion deliberately (v1alpha1 before promoting to stable), validates with OpenAPI/CEL rules at the API server so bad specs are rejected at kubectl apply time, and keeps status write-only by the controller and never user-editable, distinct from spec.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our custom resource state drifts out of sync after the controller restarts",
+      "expected_output": "Diagnoses an edge-triggered reconcile loop that assumed it saw every event in order; recommends rewriting reconcile as level-triggered (fetch current and desired state, diff, apply) so it is a safe idempotent no-op when re-run from restart or resync, not reliant on receiving every intermediate event.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's build our own postgres operator from scratch, sounds like a fun project",
+      "expected_output": "Pushes back: a mature Postgres operator almost certainly already exists and is battle-tested against failure modes not yet encountered; recommends buying/adopting an existing operator (or a thin wrapper adding org-specific policy) unless a specific gap no published operator covers can be named.",
+      "files": []
+    }
+  ]
+}

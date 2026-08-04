@@ -1,0 +1,23 @@
+{
+  "skill_name": "security-scanning",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "add security scanning to our ci pipeline",
+      "expected_output": "Runs SAST and SCA/dependency scanning on every commit since they're fast, runs DAST against staging on a nightly or pre-release cadence since it needs a live target, and surfaces findings as PR comments/inline annotations rather than a separate portal.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "the team just started ignoring the pipeline, too many findings to triage",
+      "expected_output": "Diagnoses this as a fresh scanner turned on with blocking mode before tuning, and fixes it by running new scanners report-only first, triaging and suppressing the false-positive backlog with documented reasons, and only then flipping to blocking for new findings, gating solely on high-confidence/high-severity findings.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's turn on every scanner with default settings and block all merges on any finding",
+      "expected_output": "Pushes back: blocking on every finding including low-severity and unconfirmed ones before tuning trains developers to bypass the gate; recommends report-only mode first, triaging the initial backlog, and reserving hard blocking for high-confidence, high-severity findings only.",
+      "files": []
+    }
+  ]
+}

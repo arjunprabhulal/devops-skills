@@ -1,0 +1,23 @@
+{
+  "skill_name": "compliance-as-code",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "we have a soc2 audit in two months, help us prepare",
+      "expected_output": "Maps SOC 2 controls to concrete checkable assertions against live infrastructure (not policy statements), encodes them as versioned checks (OPA/Rego, InSpec, etc.) that run on a schedule independent of the audit date, and pipes results into an immutable, timestamped evidence store so evidence is a query rather than a scavenger hunt.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "a bucket was compliant at launch but the auditor just flagged it as public",
+      "expected_output": "Diagnoses this as undetected drift from baseline since checks weren't running continuously, and fixes it by adding continuous drift detection/alerting so a manual change violating the control triggers an alert the same day, not at the next audit cycle.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just screenshot the console settings before the audit like last time",
+      "expected_output": "Pushes back: manual screenshots only prove compliance at one instant and say nothing about the other 364 days when drift actually happens; recommends encoding the control as an automated, continuously running check with evidence generated as a byproduct of normal operation instead.",
+      "files": []
+    }
+  ]
+}

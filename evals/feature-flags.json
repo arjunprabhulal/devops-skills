@@ -1,0 +1,23 @@
+{
+  "skill_name": "feature-flags",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "add a flag to gradually roll out our new checkout flow",
+      "expected_output": "Creates it as a release flag (temporary, deleted once at 100%) defaulting to off/old-behavior so a config-service outage fails toward proven behavior, defines targeting rules for a gradual ramp (internal users first, then a small percentage), and assigns an owner plus an expected removal date at creation time.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we flipped the kill switch during an incident and it didn't actually work",
+      "expected_output": "Diagnoses the kill switch as an operational flag whose off-path was never exercised in production, and recommends periodically testing both states of kill switches deliberately (not just writing them and forgetting) so the first real use isn't the first test.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "the rollout is at 100% and stable, let's just leave the flag set to true forever",
+      "expected_output": "Pushes back that setting a flag to always-true isn't removal since the conditional, dead code path, and flag definition still exist and cost cognitive overhead; insists on actually deleting the flag check, the old code path, and the flag definition as real engineering work.",
+      "files": []
+    }
+  ]
+}

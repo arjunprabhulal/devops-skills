@@ -1,0 +1,23 @@
+{
+  "skill_name": "autoscaling",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "configure an HPA for our order-processing queue worker",
+      "expected_output": "Scales on queue depth via a custom/external metric rather than defaulting to CPU, since a queue-processing service saturates on queue depth, and sets an asymmetric stabilization window (fast scale-up, slow scale-down like 300s) to avoid thrash.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "replica count is sawtoothing up and down all day",
+      "expected_output": "Diagnoses thrash from missing or symmetric stabilization windows, recommends fast scaleUp with a longer scaleDown stabilizationWindowSeconds (e.g. 300s), and checks whether HPA and VPA are both adjusting the same resource dimension on the workload and fighting each other.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's run HPA and VPA both on CPU for this deployment to be safe",
+      "expected_output": "Pushes back: HPA and VPA pointed at the same resource dimension fight each other since VPA resizing CPU requests changes the value HPA's percentage target is computed against; recommends splitting dimensions (e.g. VPA on memory, HPA on CPU/custom metric) or running VPA in recommendation-only mode.",
+      "files": []
+    }
+  ]
+}

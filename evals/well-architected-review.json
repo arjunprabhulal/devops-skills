@@ -1,0 +1,23 @@
+{
+  "skill_name": "well-architected-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "run a well-architected review on our payments service before launch",
+      "expected_output": "Scopes the review to the payments system specifically, assesses each of the six pillars against evidence (test results, dashboards, runbooks) rather than stakeholder confidence, and ends with a risk-times-cost-to-fix priority-ranked list with named owners rather than a flat checklist.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we scored well on every pillar last review but something still feels off",
+      "expected_output": "Points out that a system can score well on every pillar independently while having an unowned cross-pillar tradeoff (e.g. reliability spend that hurt cost efficiency), and asks that these tradeoffs be surfaced and given a named owner.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "just give every finding the same priority so we don't have to argue about ranking",
+      "expected_output": "Pushes back that a flat, unranked list of findings gets ignored, and insists findings be ranked by likelihood times impact weighed against fix cost, so a cheap high-impact fix outranks an expensive theoretical one, with every Now/Next item getting an owner and target date.",
+      "files": []
+    }
+  ]
+}

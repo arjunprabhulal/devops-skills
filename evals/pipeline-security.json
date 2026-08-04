@@ -1,0 +1,23 @@
+{
+  "skill_name": "pipeline-security",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "set up aws credentials for our deploy job in github actions",
+      "expected_output": "Uses OIDC federation to mint short-lived, scoped credentials per run instead of storing a static long-lived key as a secret, scopes the role to only the deploy job's target environment, and keeps this separate from test/build jobs which shouldn't hold cloud credentials at all.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "we think a secret got leaked through a pr from an outside contributor",
+      "expected_output": "Diagnoses this as the well-known fork-PR secret exposure vector, and fixes it by ensuring secrets are never granted to fork-triggered PR workflows and are masked from logs, then audits whether debug/verbose flags defeated the masking.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "let's just pin actions/checkout@v4, tags are fine and easier to read",
+      "expected_output": "Pushes back that tags are mutable and can be repointed by a compromised or malicious maintainer account, silently changing what every pipeline runs on the next trigger, and insists on pinning to an immutable commit SHA with deliberate, reviewed updates instead.",
+      "files": []
+    }
+  ]
+}

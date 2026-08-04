@@ -1,0 +1,23 @@
+{
+  "skill_name": "kubernetes-operations",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "add liveness and readiness probes to this deployment",
+      "expected_output": "Adds a startup probe to protect slow boots, a liveness probe that only fails on genuinely unrecoverable states, and a readiness probe that fails whenever the pod cannot currently serve traffic without restarting it, explaining why each threshold was chosen.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "pod keeps restarting with CrashLoopBackOff",
+      "expected_output": "Directs the user to kubectl describe pod and events before logs, checks kubectl logs --previous and the exit code (137 is SIGKILL/OOM, 1 is an application error), and states the exact Event line that explains the state rather than guessing.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "just set memory limit way higher than requests so it never gets OOMKilled",
+      "expected_output": "Pushes back: limits should be backed by observed usage, not guessed, and a wide limit-vs-request gap undermines QoS class and overcommit accuracy; recommends profiling actual usage and considering requests == limits for Guaranteed QoS where eviction order matters.",
+      "files": []
+    }
+  ]
+}
