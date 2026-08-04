@@ -127,8 +127,9 @@ if f"badge/skills-{n_skills}-" not in readme:
     errors.append(f"README.md: skill-count badge does not say {n_skills}")
 if f"badge/categories-{n_cats}-" not in readme:
     errors.append(f"README.md: category-count badge does not say {n_cats}")
-if not re.search(rf"\b{n_skills} skills spanning the lifecycle", readme):
-    errors.append(f"README.md: opening paragraph does not say {n_skills} skills")
+if not re.search(rf"\b{n_skills} skills across\s+{n_cats} categories", readme):
+    errors.append(f"README.md: opening paragraph does not say "
+                  f"{n_skills} skills across {n_cats} categories")
 for cat_row in re.findall(r"^\| ([A-Za-z/ &]+?) \| (\d+) \| ", readme, re.M):
     label, claimed = cat_row[0].strip(), int(cat_row[1])
     hits = [f for f in skill_files

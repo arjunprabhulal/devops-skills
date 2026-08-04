@@ -1,22 +1,20 @@
 # DevOps Skills
 
-<p align="center">
-  <a href="https://github.com/arjunprabhulal/devops-skills/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/arjunprabhulal/devops-skills/ci.yml?branch=main&amp;label=validate%20skills&amp;style=for-the-badge&amp;labelColor=14532D&amp;color=2EA043" alt="validate-skills"></a>
-  <a href="#skills"><img src="https://img.shields.io/badge/skills-88-2EA043?style=for-the-badge&amp;labelColor=14532D" alt="88 skills"></a>
-  <a href="#skills"><img src="https://img.shields.io/badge/categories-15-0969DA?style=for-the-badge&amp;labelColor=0A3069" alt="15 categories"></a>
-  <a href="docs/installation.md"><img src="https://img.shields.io/badge/harness-agnostic-8A2BE2?style=for-the-badge&amp;labelColor=3F1D6B" alt="Harness agnostic"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-CF222E?style=for-the-badge&amp;labelColor=6B0E17" alt="MIT License"></a>
-</p>
+[![validate skills](https://img.shields.io/github/actions/workflow/status/arjunprabhulal/devops-skills/ci.yml?branch=main&label=validate%20skills&style=flat-square&labelColor=24292E&color=2EA043)](https://github.com/arjunprabhulal/devops-skills/actions/workflows/ci.yml)
+[![skills](https://img.shields.io/badge/skills-88-2EA043?style=flat-square&labelColor=24292E)](#skills)
+[![categories](https://img.shields.io/badge/categories-15-0969DA?style=flat-square&labelColor=24292E)](#skills)
+[![harness](https://img.shields.io/badge/harness-agnostic-8250DF?style=flat-square&labelColor=24292E)](docs/installation.md)
+[![license](https://img.shields.io/badge/license-MIT-0969DA?style=flat-square&labelColor=24292E)](LICENSE)
 
-DevOps skills guides an AI agent loads on demand — 88 skills spanning the lifecycle: CI/CD,
-containers, Kubernetes, infrastructure as code, cloud, GitOps, observability, reliability,
-security, networking, data, platform engineering, automation, FinOps, and performance.
+DevOps practice written as field guides an AI coding agent loads on demand — 88 skills across
+15 categories: CI/CD, containers, Kubernetes, infrastructure as code, cloud, GitOps,
+observability, reliability, security, networking, data, platform engineering, automation, FinOps,
+and performance.
 
-Each skill is a single `SKILL.md` file covering one job, loaded when the task matches. The
-`description` frontmatter states when to reach for the skill and which sibling skill to use
-instead; the body walks through the work in numbered steps, each ending in a concrete
-`Done when:` checkpoint; the closing `Report` section states what was decided and what the skill
-does not cover.
+Each skill is one `SKILL.md`. Its `description` states when to reach for it and which sibling to
+use instead; the body works through the task in numbered steps, each closing on a concrete
+`Done when:` checkpoint; a final `Report` states what was decided and what the skill does not
+cover. Tools are named to illustrate a principle, never as a requirement.
 
 ## Install
 
@@ -363,12 +361,12 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 ## Repository layout
 
 ```
-skills/<category>/<skill>/SKILL.md   # canonical tree, and what the plugin manifest points at
-skills/<category>/<skill>/references/  # optional depth, linked one level deep from SKILL.md
-.agents/skills/<skill>/              # flat mirror for Antigravity — generated, do not edit
-evals/<skill>.json                   # 3 behavioral cases per skill
-scripts/check-skills.py              # validator
-scripts/build-antigravity.py         # regenerates the flat mirror
+skills/<category>/<skill>/SKILL.md      # canonical tree; what the plugin manifest points at
+skills/<category>/<skill>/references/   # optional depth, linked one level deep from SKILL.md
+.agents/skills/<skill>/                 # flat mirror for Antigravity — generated, do not edit
+evals/<skill>.json                      # 3 behavioral cases per skill
+scripts/check-skills.py                 # validator
+scripts/build-antigravity.py            # regenerates the flat mirror
 ```
 
 Fifteen skills carry a `references/` deep-dive with concrete material: a GitHub Actions cookbook,
