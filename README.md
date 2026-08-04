@@ -6,7 +6,25 @@
 [![Evals](https://img.shields.io/badge/evals-264-informational)](docs/evals.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-DevOps field guides an AI agent loads on demand — 88 skills spanning the lifecycle: CI/CD,
+<!-- categories:start -->
+[![CI/CD](https://img.shields.io/badge/CI%2FCD-8-555)](#skills)
+[![Containers](https://img.shields.io/badge/Containers-4-555)](#skills)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-9-555)](#skills)
+[![Infrastructure as Code](https://img.shields.io/badge/Infrastructure%20as%20Code-6-555)](#skills)
+[![Cloud](https://img.shields.io/badge/Cloud-6-555)](#skills)
+[![GitOps](https://img.shields.io/badge/GitOps-3-555)](#skills)
+[![Observability](https://img.shields.io/badge/Observability-7-555)](#skills)
+[![Reliability & SRE](https://img.shields.io/badge/Reliability%20%26%20SRE-8-555)](#skills)
+[![Security & DevSecOps](https://img.shields.io/badge/Security%20%26%20DevSecOps-8-555)](#skills)
+[![Networking](https://img.shields.io/badge/Networking-6-555)](#skills)
+[![Data & Storage](https://img.shields.io/badge/Data%20%26%20Storage-5-555)](#skills)
+[![Platform Engineering](https://img.shields.io/badge/Platform%20Engineering-5-555)](#skills)
+[![Automation](https://img.shields.io/badge/Automation-5-555)](#skills)
+[![FinOps](https://img.shields.io/badge/FinOps-4-555)](#skills)
+[![Performance](https://img.shields.io/badge/Performance-4-555)](#skills)
+<!-- categories:end -->
+
+DevOps skills guides an AI agent loads on demand — 88 skills spanning the lifecycle: CI/CD,
 containers, Kubernetes, infrastructure as code, cloud, GitOps, observability, reliability,
 security, networking, data, platform engineering, automation, FinOps, and performance.
 
@@ -122,24 +140,6 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 [docs/installation.md](docs/installation.md#antigravity-rules-and-workflows).
 
 ## Skills
-
-<!-- categories:start -->
-[![CI/CD](https://img.shields.io/badge/CI%2FCD-8-555)](#skills)
-[![Containers](https://img.shields.io/badge/Containers-4-555)](#skills)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-9-555)](#skills)
-[![Infrastructure as Code](https://img.shields.io/badge/Infrastructure%20as%20Code-6-555)](#skills)
-[![Cloud](https://img.shields.io/badge/Cloud-6-555)](#skills)
-[![GitOps](https://img.shields.io/badge/GitOps-3-555)](#skills)
-[![Observability](https://img.shields.io/badge/Observability-7-555)](#skills)
-[![Reliability & SRE](https://img.shields.io/badge/Reliability%20%26%20SRE-8-555)](#skills)
-[![Security & DevSecOps](https://img.shields.io/badge/Security%20%26%20DevSecOps-8-555)](#skills)
-[![Networking](https://img.shields.io/badge/Networking-6-555)](#skills)
-[![Data & Storage](https://img.shields.io/badge/Data%20%26%20Storage-5-555)](#skills)
-[![Platform Engineering](https://img.shields.io/badge/Platform%20Engineering-5-555)](#skills)
-[![Automation](https://img.shields.io/badge/Automation-5-555)](#skills)
-[![FinOps](https://img.shields.io/badge/FinOps-4-555)](#skills)
-[![Performance](https://img.shields.io/badge/Performance-4-555)](#skills)
-<!-- categories:end -->
 
 | Category | Skills | Focus |
 | --- | --- | --- |
