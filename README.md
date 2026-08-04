@@ -354,9 +354,8 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 | [docs/evals.md](docs/evals.md) | The eval file schema and the three-case convention |
 | [docs/architecture.md](docs/architecture.md) | Repository layout, the two skill trees, and the scripts |
 | [docs/faq.md](docs/faq.md) | Common questions about scope, triggering, and limits |
-| [CONTEXT.md](CONTEXT.md) | Why the collection is shaped the way it is |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Adding or changing a skill |
-| [AGENTS.md](AGENTS.md) | Conventions for agents working in this repository |
+| [AGENTS.md](AGENTS.md) | Skill format, repository conventions, and design rationale |
 
 ## Repository layout
 

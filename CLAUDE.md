@@ -3,8 +3,6 @@
 Repository conventions for agents live in `AGENTS.md`. Read it before editing anything here and
 follow it — it defines the required shape of a skill, the frontmatter keys, and the commit checks.
 
-The design rationale behind that structure is in `CONTEXT.md`.
-
 Two rules worth restating:
 
 - `.agents/skills/` is generated from `skills/<category>/<skill>/` by

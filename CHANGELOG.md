@@ -54,7 +54,7 @@ Changes land here before they are cut into a release.
 - Issue and pull request templates under `.github/`.
 - Documentation: `README.md` with the skill catalogue, `docs/installation.md`,
   `docs/authoring-skills.md`, `docs/evals.md`, `docs/architecture.md`, `docs/faq.md`,
-  `CONTEXT.md` for design rationale, `AGENTS.md` and `CLAUDE.md` for repository conventions,
+  `AGENTS.md` for repository conventions and design rationale, `CLAUDE.md` as its pointer,
   `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, and the MIT `LICENSE`.
 
 [Unreleased]: https://github.com/arjunprabhulal/devops-skills/compare/v1.0.0...HEAD
