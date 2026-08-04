@@ -1,27 +1,32 @@
 # DevOps Skills
 
-[![validate-skills](https://img.shields.io/github/actions/workflow/status/arjunprabhulal/devops-skills/ci.yml?branch=main&label=validate-skills)](https://github.com/arjunprabhulal/devops-skills/actions/workflows/ci.yml)
-[![Skills](https://img.shields.io/badge/skills-88-informational)](#skills)
-[![Categories](https://img.shields.io/badge/categories-15-informational)](#skills)
-[![Evals](https://img.shields.io/badge/evals-264-informational)](docs/evals.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+<p align="center">
+  <img src="https://img.shields.io/github/actions/workflow/status/arjunprabhulal/devops-skills/ci.yml?branch=main&amp;label=validate%20skills&amp;style=for-the-badge" alt="validate-skills">
+  <img src="https://img.shields.io/badge/skills-88-brightgreen?style=for-the-badge" alt="88 skills">
+  <img src="https://img.shields.io/badge/categories-15-lightgrey?style=for-the-badge" alt="15 categories">
+  <img src="https://img.shields.io/badge/evals-264-blue?style=for-the-badge" alt="264 evals">
+  <img src="https://img.shields.io/badge/harness-agnostic-8A2BE2?style=for-the-badge" alt="Harness agnostic">
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="MIT License">
+</p>
 
 <!-- categories:start -->
-[![CI/CD](https://img.shields.io/badge/CI%2FCD-8-0969DA)](#skills)
-[![Containers](https://img.shields.io/badge/Containers-4-0969DA)](#skills)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-9-0969DA)](#skills)
-[![Infrastructure as Code](https://img.shields.io/badge/Infrastructure%20as%20Code-6-1A7F37)](#skills)
-[![Cloud](https://img.shields.io/badge/Cloud-6-1A7F37)](#skills)
-[![GitOps](https://img.shields.io/badge/GitOps-3-1A7F37)](#skills)
-[![Observability](https://img.shields.io/badge/Observability-7-BC4C00)](#skills)
-[![Reliability & SRE](https://img.shields.io/badge/Reliability%20%26%20SRE-8-BC4C00)](#skills)
-[![Security & DevSecOps](https://img.shields.io/badge/Security%20%26%20DevSecOps-8-CF222E)](#skills)
-[![Networking](https://img.shields.io/badge/Networking-6-CF222E)](#skills)
-[![Data & Storage](https://img.shields.io/badge/Data%20%26%20Storage-5-0F766E)](#skills)
-[![Platform Engineering](https://img.shields.io/badge/Platform%20Engineering-5-0F766E)](#skills)
-[![Automation](https://img.shields.io/badge/Automation-5-8250DF)](#skills)
-[![FinOps](https://img.shields.io/badge/FinOps-4-8250DF)](#skills)
-[![Performance](https://img.shields.io/badge/Performance-4-8250DF)](#skills)
+<p align="center">
+  <img src="https://img.shields.io/badge/CI%2FCD-8-0969DA?style=flat-square" alt="CI/CD">
+  <img src="https://img.shields.io/badge/Containers-4-0969DA?style=flat-square" alt="Containers">
+  <img src="https://img.shields.io/badge/Kubernetes-9-0969DA?style=flat-square" alt="Kubernetes">
+  <img src="https://img.shields.io/badge/Infrastructure%20as%20Code-6-1A7F37?style=flat-square" alt="Infrastructure as Code">
+  <img src="https://img.shields.io/badge/Cloud-6-1A7F37?style=flat-square" alt="Cloud">
+  <img src="https://img.shields.io/badge/GitOps-3-1A7F37?style=flat-square" alt="GitOps">
+  <img src="https://img.shields.io/badge/Observability-7-BC4C00?style=flat-square" alt="Observability">
+  <img src="https://img.shields.io/badge/Reliability%20%26%20SRE-8-BC4C00?style=flat-square" alt="Reliability & SRE">
+  <img src="https://img.shields.io/badge/Security%20%26%20DevSecOps-8-CF222E?style=flat-square" alt="Security & DevSecOps">
+  <img src="https://img.shields.io/badge/Networking-6-CF222E?style=flat-square" alt="Networking">
+  <img src="https://img.shields.io/badge/Data%20%26%20Storage-5-0F766E?style=flat-square" alt="Data & Storage">
+  <img src="https://img.shields.io/badge/Platform%20Engineering-5-0F766E?style=flat-square" alt="Platform Engineering">
+  <img src="https://img.shields.io/badge/Automation-5-8250DF?style=flat-square" alt="Automation">
+  <img src="https://img.shields.io/badge/FinOps-4-8250DF?style=flat-square" alt="FinOps">
+  <img src="https://img.shields.io/badge/Performance-4-8250DF?style=flat-square" alt="Performance">
+</p>
 <!-- categories:end -->
 
 DevOps skills guides an AI agent loads on demand — 88 skills spanning the lifecycle: CI/CD,

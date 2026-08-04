@@ -146,8 +146,13 @@ badge_block = re.search(r"<!-- categories:start -->(.*?)<!-- categories:end -->"
 if not badge_block:
     errors.append("README.md: category badge block missing (<!-- categories:start --> markers)")
 else:
-    badged = dict(re.findall(r"\[!\[([^\]]+)\]\(https://img\.shields\.io/badge/[^-]+-(\d+)-",
-                             badge_block.group(1)))
+    # Accept either the markdown form [![Label](.../badge/Label-N-color)] or the HTML
+    # form <img src=".../badge/Label-N-color" alt="Label">, whichever the header uses.
+    blk = badge_block.group(1)
+    badged = {a: c for c, a in re.findall(
+        r'<img src="https://img\.shields\.io/badge/[^"]*?-(\d+)-[^"]*" alt="([^"]+)"', blk)}
+    badged.update(dict(re.findall(
+        r"\[!\[([^\]]+)\]\(https://img\.shields\.io/badge/[^-]+-(\d+)-", blk)))
     for label, d in CATEGORY_DIRS.items():
         real = len(glob.glob(os.path.join(ROOT, "skills", d, "*", "SKILL.md")))
         if label not in badged:
