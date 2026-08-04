@@ -36,6 +36,30 @@ The CLI discovers skills up to two levels below `skills/`, so the category layou
 `skills/<category>/<skill-name>/SKILL.md` — is read directly with no build step. It also recognizes
 `.claude-plugin/plugin.json`, which this repository provides.
 
+Eighty-eight skills is a lot to take at once. To see what is on offer without writing anything:
+
+```bash
+npx skills add arjunprabhulal/devops-skills --list
+```
+
+To install a named subset instead of everything:
+
+```bash
+npx skills add arjunprabhulal/devops-skills -s kubernetes-operations,incident-response,gitops
+```
+
+Other flags worth knowing:
+
+- `--all` — every skill, every detected agent, no prompts.
+- `-g`, `--global` — install at user level rather than into the current project.
+- `-a <agents>` — target specific agents, or `'*'` for all of them.
+- `--copy` — copy the files instead of symlinking them into agent directories.
+- `npx skills use arjunprabhulal/devops-skills@<skill>` — generate the prompt for one skill without
+  installing anything.
+
+Installed skills are then managed with `npx skills list`, `npx skills update`, and
+`npx skills remove`.
+
 ## Claude Code, a single skill, manually
 
 To use one skill without the plugin, copy its folder into a skills directory:
