@@ -2,16 +2,17 @@
 
 [![validate-skills](https://github.com/arjunprabhulal/devops-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/arjunprabhulal/devops-skills/actions/workflows/ci.yml)
 [![Skills](https://img.shields.io/badge/skills-88-informational)](#skills)
+[![Categories](https://img.shields.io/badge/categories-15-informational)](#skills)
+[![Evals](https://img.shields.io/badge/evals-264-informational)](docs/evals.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-88 [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
-covering the DevOps lifecycle: CI/CD, containers, Kubernetes, infrastructure as code, cloud,
-GitOps, observability, reliability, security, networking, data, platform engineering, automation,
-FinOps, and performance.
+DevOps field guides an AI agent loads on demand — 88 skills spanning the lifecycle: CI/CD,
+containers, Kubernetes, infrastructure as code, cloud, GitOps, observability, reliability,
+security, networking, data, platform engineering, automation, FinOps, and performance.
 
-A skill is a single `SKILL.md` file that an agent loads when it hits a matching task. Each one here
-covers one job. The `description` frontmatter states when to reach for the skill and which sibling
-skill to use instead; the body walks through the work in numbered steps, each ending in a concrete
+Each skill is a single `SKILL.md` file covering one job, loaded when the task matches. The
+`description` frontmatter states when to reach for the skill and which sibling skill to use
+instead; the body walks through the work in numbered steps, each ending in a concrete
 `Done when:` checkpoint; the closing `Report` section states what was decided and what the skill
 does not cover.
 
@@ -121,6 +122,24 @@ The same file can also be used as an always-on **rule** under `.agents/rules/`, 
 [docs/installation.md](docs/installation.md#antigravity-rules-and-workflows).
 
 ## Skills
+
+<!-- categories:start -->
+[![CI/CD](https://img.shields.io/badge/CI%2FCD-8-555)](#skills)
+[![Containers](https://img.shields.io/badge/Containers-4-555)](#skills)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-9-555)](#skills)
+[![Infrastructure as Code](https://img.shields.io/badge/Infrastructure%20as%20Code-6-555)](#skills)
+[![Cloud](https://img.shields.io/badge/Cloud-6-555)](#skills)
+[![GitOps](https://img.shields.io/badge/GitOps-3-555)](#skills)
+[![Observability](https://img.shields.io/badge/Observability-7-555)](#skills)
+[![Reliability & SRE](https://img.shields.io/badge/Reliability%20%26%20SRE-8-555)](#skills)
+[![Security & DevSecOps](https://img.shields.io/badge/Security%20%26%20DevSecOps-8-555)](#skills)
+[![Networking](https://img.shields.io/badge/Networking-6-555)](#skills)
+[![Data & Storage](https://img.shields.io/badge/Data%20%26%20Storage-5-555)](#skills)
+[![Platform Engineering](https://img.shields.io/badge/Platform%20Engineering-5-555)](#skills)
+[![Automation](https://img.shields.io/badge/Automation-5-555)](#skills)
+[![FinOps](https://img.shields.io/badge/FinOps-4-555)](#skills)
+[![Performance](https://img.shields.io/badge/Performance-4-555)](#skills)
+<!-- categories:end -->
 
 | Category | Skills | Focus |
 | --- | --- | --- |
