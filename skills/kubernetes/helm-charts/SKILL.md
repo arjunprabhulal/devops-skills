@@ -80,8 +80,8 @@ helpers (`_helpers.tpl`) that need their own comments to follow.
 - **Lint and render before every commit**: `helm lint` and `helm template` catch broken YAML from
   whitespace/indentation errors that only surface at `helm install` time otherwise.
 
-**Done when:** `helm template` output for every supported values combination is something you'd be
-willing to hand-review as raw manifests.
+**Done when:** `helm template` renders valid manifests for every supported values combination, and
+that rendered output is checked in CI rather than only at install time.
 
 ## 5. Choose Helm over Kustomize for packaging, not patching
 

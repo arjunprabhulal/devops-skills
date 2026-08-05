@@ -31,8 +31,8 @@ result. Picking the wrong one either misses short-lived hot spots or perturbs pr
 - **Never trust instrumentation numbers from a heavily instrumented run** for tuning production
   latency — the overhead itself can dominate the measurement.
 
-**Done when:** the profiling method is chosen deliberately for the question being asked, and its
-overhead is accounted for in reading the result.
+**Done when:** the profiler's measured overhead is recorded alongside the profile, and no
+instrumented run is used to justify a production latency number.
 
 ## 2. Read the flame graph for width, not height
 

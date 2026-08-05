@@ -50,8 +50,8 @@ Cache-aside is the right default for most systems — it is the simplest to reas
 fails safe by falling back to the source. Write-through and write-behind earn their added
 complexity only when write latency or write volume genuinely demands it.
 
-**Done when:** the chosen pattern is named explicitly and its tradeoff is understood, not
-inherited by default from whatever library example was copied.
+**Done when:** the chosen pattern is named in the service's documentation alongside the specific
+failure it accepts — stale reads, added write latency, or possible loss on cache failure.
 
 ## 3. Set TTLs from staleness tolerance, not convenience
 

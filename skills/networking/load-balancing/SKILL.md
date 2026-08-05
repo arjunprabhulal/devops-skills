@@ -62,8 +62,8 @@ every instance is identical.
 | Least-connections | Variable request duration | Needs accurate connection counts |
 | Weighted (either) | Heterogeneous backend sizes | Weights need upkeep as fleet changes |
 
-**Done when:** the chosen algorithm's assumption about request cost matches the workload's real
-distribution, not the platform default left unexamined.
+**Done when:** the spread between p50 and p99 request duration has been measured, and the chosen
+algorithm matches that spread — round-robin only where the spread is narrow.
 
 ## 4. Drain connections before a backend disappears
 
@@ -89,8 +89,8 @@ can serve any request; reach for stickiness only when that's genuinely not feasi
 - **Cookie-based affinity survives client IP changes**; IP-based affinity breaks behind NAT or
   mobile networks where source IP shifts mid-session.
 
-**Done when:** sticky sessions are used only where state genuinely can't be externalized, and the
-uneven-load tradeoff has been explicitly accepted, not discovered later.
+**Done when:** every route using session affinity names the state that forced it, and per-backend
+load is graphed so the distribution cost of that affinity is visible rather than assumed.
 
 ## 6. Watch distribution, not just uptime
 

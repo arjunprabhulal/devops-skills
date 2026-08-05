@@ -46,8 +46,8 @@ Cache-Control: public, max-age=31536000, immutable   # hashed filename, cache fo
 Cache-Control: public, max-age=60, stale-while-revalidate=30   # changes often, needs freshness
 ```
 
-**Done when:** every cacheable response's TTL reflects an explicit answer to "how stale can this be
-before it's wrong," not the platform default left unexamined.
+**Done when:** every cacheable response's TTL is recorded with the staleness window it implies, and
+no route is serving the platform's default TTL unrecorded.
 
 ## 3. Invalidate deliberately, not by dropping the whole cache
 

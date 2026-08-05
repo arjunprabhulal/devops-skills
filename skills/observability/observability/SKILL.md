@@ -28,7 +28,7 @@ A common mistake is logging what should be a metric (counting errors by parsing 
 
 See `metrics-and-monitoring`, `log-management`, and `distributed-tracing` for how to do each well.
 
-**Done when:** every new signal was deliberately typed as metric, log, or trace — not defaulted to "log everything."
+**Done when:** no dashboard or alert is built on counting log lines where a counter would serve, and each signal's type can be traced to the question it answers.
 
 ## 2. Cover every service with RED, every resource with USE
 

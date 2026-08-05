@@ -101,8 +101,8 @@ partially rolled back.
 - **Budget sidecar CPU/memory into every pod's requests** — an uninstrumented sidecar cost is a
   common cause of nodes running hotter than capacity planning assumed.
 
-**Done when:** the measured p99 latency and resource overhead of sidecar injection is known and
-was an accepted tradeoff, not a surprise discovered in production.
+**Done when:** p99 latency and per-pod resource overhead are measured before and after sidecar
+rollout, and both numbers are recorded next to the decision to adopt the mesh.
 
 ## Report
 
