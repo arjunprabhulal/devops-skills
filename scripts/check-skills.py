@@ -20,6 +20,28 @@ import json, os, re, sys, glob
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 errors = []
 
+DONE_WHEN_RE = re.compile(r'\*\*Done when:\*\*(.*?)(?=\n\n|\n##|\Z)', re.S)
+
+# A Done-when names the observable state that proves the step worked. These idioms
+# instead check something inside a person's head — whether a tradeoff was "accepted",
+# whether a plan was "actually read" — which nobody can verify against a running
+# system, so the step can be claimed complete without being complete. This is a
+# regression guard against known phrasings, not a semantic check: passing it does not
+# mean a checkpoint is falsifiable, only that it avoids these specific traps.
+MENTAL_STATE_RE = re.compile(r"""\b(?:
+      tradeoff\s+(?:has\s+been\s+|was\s+|is\s+)?(?:explicitly\s+)?accepted
+    | explicitly\s+accepted
+    | willing\s+to\s+(?:tolerate|hand-review|accept)
+    | actually\s+read
+    | accounted\s+for\s+in
+    | deliberate\s+reason
+    | left\s+unexamined
+    | approved\s+by\s+habit
+    | tradeoff\s+is\s+understood
+    | chosen\s+deliberately
+    | deliberately\s+typed
+)\b""", re.I | re.X)
+
 skill_files = sorted(glob.glob(os.path.join(ROOT, "skills", "*", "*", "SKILL.md")))
 for f in skill_files:
     rel = os.path.relpath(f, ROOT)
@@ -59,6 +81,14 @@ for f in skill_files:
         errors.append(f"{rel}: missing '## Report' section")
     if "**Done when:**" not in txt:
         errors.append(f"{rel}: no '**Done when:**' checkpoint")
+    for m in DONE_WHEN_RE.finditer(txt):
+        line = " ".join(m.group(1).split())
+        hit = MENTAL_STATE_RE.search(line)
+        if hit:
+            errors.append(
+                f"{rel}: Done-when checks a mental state ('{hit.group(0)}'), not an "
+                f"observable condition — name the artifact, measurement, or event instead: "
+                f"\"{line[:70]}…\"")
     if txt.count("```") % 2 != 0:
         errors.append(f"{rel}: unbalanced code fences")
 
