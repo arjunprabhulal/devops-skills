@@ -108,8 +108,8 @@ not a default.
 - **Revisit over-provisioned capacity on the same cadence as the forecast** — capacity
   headroom rots the same way stale forecasts do.
 
-**Done when:** the capacity plan states its cost and that cost has been explicitly accepted,
-not just incurred by default.
+**Done when:** the capacity plan states its cost as a number and names the budget owner who
+approved it.
 
 ## Report
 

@@ -47,8 +47,8 @@ reason about, another set of quotas and outage patterns to learn, and another on
 that needs to know all of it. This cost shows up as engineer-hours and incident response quality,
 not as a line item — which is exactly why it's the cost teams underestimate before committing.
 
-**Done when:** the ongoing staffing cost of the second provider has been estimated and accepted
-by whoever owns the budget, not just the migration cost.
+**Done when:** the ongoing staffing cost of the second provider is stated as a number in the same
+document as the migration cost, and that document names the budget owner who signed off.
 
 ## 4. Audit for accidental multi-cloud regularly
 

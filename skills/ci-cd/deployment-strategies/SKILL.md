@@ -35,8 +35,8 @@ latency regressions.
 - **Shadow:** mirror real traffic to the new version without serving its responses — buys
   behavioral signal with zero user-facing risk, but only for read paths.
 
-**Done when:** the chosen strategy's blast radius, if the new version is broken, matches what the
-team is actually willing to tolerate.
+**Done when:** the blast radius is written down as a number — users or percent of traffic exposed
+before the first health gate — and that number is what the rollout actually enforces.
 
 ## 2. Treat rollback as a feature you test, not a hope
 

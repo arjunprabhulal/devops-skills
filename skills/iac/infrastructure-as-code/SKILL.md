@@ -34,8 +34,8 @@ provider default that shifted, a variable that resolved to something unexpected.
 - **Never apply a plan you didn't personally read**, even in CI — a human or a policy gate (see
   `policy-as-code`) should see the diff before it lands.
 
-**Done when:** every apply was preceded by a plan that a person actually read, not just approved
-by habit.
+**Done when:** the plan output for every production apply is attached to its approval record, so
+what was approved can be compared against what was applied.
 
 ## 2. Protect state like it's a production database, because it is
 

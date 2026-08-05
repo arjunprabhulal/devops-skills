@@ -116,8 +116,8 @@ skill's obligations without anyone deciding they should.
 - **Question any local PersistentVolumeClaim on a service that is not, in its core purpose, a
   stateful system** — it is often accidental scope creep rather than a real requirement.
 
-**Done when:** every component holding local state has a deliberate reason to, and nothing is
-stateful purely by accident of how it was first deployed.
+**Done when:** every component with a PersistentVolumeClaim is listed with what state it holds and
+why that state cannot live in a shared backend instead.
 
 ## Report
 
